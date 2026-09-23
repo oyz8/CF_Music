@@ -1,0 +1,2244 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>CF Music · GitHub</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='24' y2='24' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0%25' stop-color='%2314b8a6'/%3E%3Cstop offset='100%25' stop-color='%230891b2'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='24' height='24' rx='6' ry='6' fill='url(%23g)'/%3E%3Cg stroke='%23fff' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' fill='none'%3E%3Cpath d='M3 18v-6a9 9 0 0 1 18 0v6'/%3E%3Cpath d='M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z'/%3E%3C/g%3E%3C/svg%3E" />
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='24' y2='24' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0%25' stop-color='%2314b8a6'/%3E%3Cstop offset='100%25' stop-color='%230891b2'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='24' height='24' rx='6' ry='6' fill='url(%23g)'/%3E%3Cg stroke='%23fff' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' fill='none'%3E%3Cpath d='M3 18v-6a9 9 0 0 1 18 0v6'/%3E%3Cpath d='M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z'/%3E%3C/g%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<script>
+  (function() {
+    var t = localStorage.getItem('theme');
+    if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+  })();
+</script>
+<style>
+:root,:root[data-theme="light"]{color-scheme:light;--bg:#f8fafc;--bg-gradient:radial-gradient(circle at top left,rgba(15,118,110,.07),transparent 40%),radial-gradient(circle at right 20%,rgba(2,132,199,.05),transparent 35%),linear-gradient(180deg,#f8fafc 0%,#eef2f6 100%);--panel:rgba(255,255,255,.85);--panel-border:rgba(15,23,42,.06);--text:#0f172a;--text-muted:#475569;--primary:#0f766e;--primary-hover:#0d9488;--primary-strong:#115e59;--primary-glow:rgba(15,118,110,.15);--danger:#b91c1c;--shadow:0 20px 50px rgba(15,23,42,.05);--card-shadow:0 4px 20px rgba(15,23,42,.03);--input-bg:#fff;--input-border:#cbd5e1;--input-focus:#0f766e;--btn-ghost-bg:#e2e8f0;--btn-ghost-hover:#cbd5e1;--table-header-bg:#f8fafc;--table-border:#e2e8f0;--table-row-hover:#f1f5f9;--row-selected-bg:rgba(15,118,110,.07);--warn-bg:rgba(217,119,6,.1);--warn-border:rgba(217,119,6,.3);--warn-text:#b45309;--modal-mask:rgba(15,23,42,.45);--modal-shadow:0 24px 60px rgba(15,23,42,.18)}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#0b0f19;--bg-gradient:radial-gradient(circle at top left,rgba(20,184,166,.1),transparent 45%),radial-gradient(circle at right 20%,rgba(14,165,233,.06),transparent 40%),linear-gradient(180deg,#0b0f19 0%,#030712 100%);--panel:rgba(17,24,39,.85);--panel-border:rgba(255,255,255,.08);--text:#f1f5f9;--text-muted:#94a3b8;--primary:#14b8a6;--primary-hover:#2dd4bf;--primary-strong:#99f6e4;--primary-glow:rgba(20,184,166,.25);--danger:#ef4444;--shadow:0 20px 50px rgba(0,0,0,.3);--card-shadow:0 4px 20px rgba(0,0,0,.2);--input-bg:#1e293b;--input-border:#334155;--input-focus:#14b8a6;--btn-ghost-bg:#334155;--btn-ghost-hover:#475569;--table-header-bg:#1e293b;--table-border:#334155;--table-row-hover:#1e293b;--row-selected-bg:rgba(20,184,166,.12);--warn-bg:rgba(251,191,36,.15);--warn-border:rgba(251,191,36,.35);--warn-text:#fbbf24;--modal-mask:rgba(0,0,0,.55);--modal-shadow:0 24px 60px rgba(0,0,0,.5)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{min-height:100vh;font-family:'Inter',ui-sans-serif,system-ui,sans-serif;color:var(--text);background:var(--bg-gradient);-webkit-font-smoothing:antialiased;transition:background .3s,color .3s}
+.shell{width:min(1200px,calc(100vw - 24px));margin:0 auto;padding:16px 0 90px}
+
+.header{display:grid;grid-template-columns:1.05fr .95fr;gap:12px;align-items:center;margin-bottom:12px}
+.brand{display:flex;align-items:center;gap:8px;min-width:0}
+.brand .cloud-logo{display:block;width:24px;height:24px;flex-shrink:0;border-radius:6px;overflow:hidden;transform:translateY(-2px)}
+.brand-title{font-family:'Outfit',sans-serif;font-weight:800;font-size:18px;line-height:24px;letter-spacing:-.02em;color:var(--primary);white-space:nowrap}
+.brand-sub{font-size:13px;line-height:24px;color:var(--text-muted);white-space:nowrap}
+.header-right{display:flex;gap:6px;align-items:center;justify-content:flex-end}
+
+.theme-toggle{width:34px;height:34px;border-radius:10px;border:1px solid var(--panel-border);background:var(--panel);color:var(--text);cursor:pointer;box-shadow:var(--card-shadow);display:inline-flex;align-items:center;justify-content:center;padding:0;outline:none;transition:all .2s;position:relative}
+.theme-toggle:hover{background:var(--table-row-hover)}
+.theme-toggle svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:transform .5s,opacity .2s}
+:root[data-theme="dark"] .sun-icon{opacity:1;transform:rotate(0) scale(1)}
+:root[data-theme="dark"] .moon-icon{opacity:0;transform:rotate(90deg) scale(0);position:absolute}
+:root[data-theme="light"] .sun-icon{opacity:0;transform:rotate(-90deg) scale(0);position:absolute}
+:root[data-theme="light"] .moon-icon{opacity:1;transform:rotate(0) scale(1)}
+
+.github-corner{position:absolute;top:0;right:0;z-index:1;line-height:0;display:block}
+.github-corner svg{width:88px;height:88px;border:0;display:block}
+.github-corner .gh-bg{fill:var(--primary);transition:fill .3s}
+.github-corner .gh-arm,.github-corner .gh-body{fill:#fff}
+.github-corner:hover .gh-bg{fill:var(--primary-hover)}
+.github-corner:hover .gh-arm{animation:octocat-wave 560ms ease-in-out}
+@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}
+
+.card{padding:16px;border:1px solid var(--panel-border);border-radius:16px;background:var(--panel);box-shadow:var(--card-shadow);backdrop-filter:blur(16px)}
+.card-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:13px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.card-title svg{width:15px;height:15px;color:var(--primary);flex-shrink:0}
+.grid-top{display:grid;grid-template-columns:1.05fr .95fr;gap:12px;margin-bottom:12px}
+.search-panel{display:flex;flex-direction:column;gap:10px}
+.search-row{display:flex;gap:8px}
+.search-row input{flex:1;min-width:0;padding:10px 14px;border:1px solid var(--input-border);border-radius:10px;font-family:inherit;font-size:14px;background:var(--input-bg);color:var(--text);outline:none;transition:all .2s}
+.search-row input:focus{border-color:var(--input-focus);box-shadow:0 0 0 3px var(--primary-glow)}
+.search-row input::placeholder{color:var(--text-muted);opacity:.6}
+.search-row button{flex-shrink:0;padding:10px 20px}
+.search-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.search-options select{padding:8px 10px;font-size:12.5px;border:1px solid var(--input-border);border-radius:9px;background:var(--input-bg);color:var(--text);font-family:inherit;cursor:pointer;outline:none;min-width:0}
+.search-options select:focus{border-color:var(--input-focus)}
+
+.rate-limit{margin-top:4px;padding:10px 12px;background:var(--table-row-hover);border:1px solid var(--panel-border);border-radius:10px}
+.rate-limit-bar{position:relative;width:100%;height:26px;background:var(--input-border);border-radius:999px;overflow:hidden}
+.rate-limit-bar + .rate-limit-bar{margin-top:8px}
+.rate-limit-fill{position:absolute;top:0;left:0;height:100%;width:100%;border-radius:999px;background:linear-gradient(90deg,var(--primary),#0891b2);transition:width .4s cubic-bezier(.4,0,.2,1), background .3s}
+.rate-limit-fill.low{background:linear-gradient(90deg,#d97706,#f59e0b)}
+.rate-limit-fill.critical{background:linear-gradient(90deg,#dc2626,#ef4444);animation:rate-pulse 1s ease-in-out infinite}
+@keyframes rate-pulse{0%,100%{box-shadow:inset 0 0 0 rgba(239,68,68,0)}50%{box-shadow:inset 0 0 16px rgba(239,68,68,.95)}}
+.rate-limit-label{position:absolute;inset:0;display:flex;justify-content:space-between;align-items:center;padding:0 14px;font-size:11.5px;font-weight:700;color:var(--text);pointer-events:none;z-index:2;letter-spacing:.04em;font-family:'Outfit',sans-serif}
+.rate-limit-label span:last-child{font-family:'JetBrains Mono',monospace;letter-spacing:0;font-weight:600}
+.rate-limit-label span{text-shadow:0 1px 2px rgba(255,255,255,.6)}
+:root[data-theme="dark"] .rate-limit-label span{text-shadow:0 1px 3px rgba(0,0,0,.75)}
+.rate-limit-hint{font-size:11px;color:var(--text-muted);margin-top:8px}
+
+.detail-panel{display:flex;flex-direction:column}
+.detail-close{
+  display:none;
+  margin-left:auto;
+  background:transparent;border:0;color:var(--text-muted);
+  cursor:pointer;padding:0;border-radius:6px;
+  width:24px;height:24px;
+  align-items:center;justify-content:center;
+  transition:all .2s;
+}
+.detail-close:hover{background:var(--table-row-hover);color:var(--text)}
+.detail-close svg{width:14px;height:14px;flex-shrink:0}
+.detail-empty{flex:1;min-height:180px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--text-muted);font-size:13px;border:1px dashed var(--panel-border);border-radius:12px;padding:20px}
+.detail-empty .empty-emoji{width:40px;height:40px;color:var(--primary);opacity:.5}
+.detail-empty .empty-emoji svg{width:100%;height:100%}
+.detail{display:flex;gap:14px;align-items:flex-start;flex-wrap:wrap}
+.detail .cover{width:100px;height:100px;border-radius:14px;object-fit:cover;box-shadow:var(--card-shadow);border:1px solid var(--panel-border);background:var(--table-row-hover);flex:0 0 auto}
+.detail .cover.ph{display:flex;align-items:center;justify-content:center;color:var(--primary);opacity:.5}
+.detail .cover.ph svg{width:38px;height:38px}
+.detail-info{flex:1;min-width:200px;display:flex;flex-direction:column;gap:8px}
+.detail-name{font-family:'Outfit',sans-serif;font-size:17px;font-weight:800;letter-spacing:-.02em;line-height:1.25}
+.detail-artist{color:var(--text-muted);font-size:13px;display:flex;align-items:center;gap:5px}
+.detail-artist svg{width:13px;height:13px;flex-shrink:0}
+.detail-badges{display:flex;gap:5px;flex-wrap:wrap}
+.listen-tip{display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:10px;background:var(--primary-glow);border:1px solid var(--panel-border);color:var(--text-muted);font-size:12px;line-height:1.4}
+.listen-tip svg{width:14px;height:14px;flex-shrink:0;color:var(--primary)}
+.listen-tip.warn{background:var(--warn-bg);border-color:var(--warn-border);color:var(--warn-text)}
+.listen-tip.warn svg{color:var(--warn-text)}
+.upload-row{display:flex;gap:8px}
+.upload-row button{flex:1}
+.lrc-wrap{margin-top:12px;padding:12px;background:var(--table-row-hover);border:1px solid var(--panel-border);border-radius:12px;max-height:150px;overflow:auto}
+.lrc-line{color:var(--text-muted);font-size:12.5px;line-height:2}
+.results-card{padding:16px}
+
+.tabs{display:flex;gap:4px;margin-bottom:12px;border-bottom:1px solid var(--panel-border);align-items:center}
+.tab{background:transparent;color:var(--text-muted);padding:9px 16px;border-radius:10px 10px 0 0;font-size:13.5px;border-bottom:2px solid transparent;box-shadow:none;display:inline-flex;align-items:center;gap:6px}
+.tab svg{width:14px;height:14px;flex-shrink:0}
+.tab:hover{transform:none;color:var(--text);background:var(--table-row-hover)}
+.tab.active{color:var(--primary-strong);border-bottom-color:var(--primary);background:var(--primary-glow)}
+.tabs-spacer{flex:1}
+.tabs-deploy{margin-bottom:2px;margin-left:6px}
+.tabs-deploy.dirty{animation:tabs-deploy-pulse 2s ease-in-out infinite}
+@keyframes tabs-deploy-pulse{0%,100%{box-shadow:0 4px 14px var(--primary-glow)}50%{box-shadow:0 4px 22px rgba(16,185,129,.6)}}
+
+button{appearance:none;border:0;border-radius:10px;padding:10px 18px;font-family:'Outfit',sans-serif;font-weight:700;font-size:13.5px;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;justify-content:center;gap:6px;line-height:1;white-space:nowrap}
+button svg{width:14px;height:14px;flex-shrink:0}
+button:hover{transform:translateY(-1.5px)}
+button:active{transform:scale(.97)}
+button:disabled{cursor:not-allowed;transform:none!important;opacity:.55}
+.btn-primary{color:#fff;background:linear-gradient(135deg,var(--primary),#0891b2);box-shadow:0 4px 14px var(--primary-glow)}
+.btn-primary:hover{background:linear-gradient(135deg,var(--primary-hover),#0e7490)}
+.btn-ghost{color:var(--text);background:var(--btn-ghost-bg)}
+.btn-ghost:hover{background:var(--btn-ghost-hover)}
+.btn-danger{color:#fff;background:linear-gradient(135deg,var(--danger),#dc2626)}
+.btn-success{color:#fff;background:linear-gradient(135deg,#10b981,#059669)}
+.btn-success:hover{background:linear-gradient(135deg,#34d399,#10b981)}
+.btn-uploaded{color:#059669!important;background:rgba(16,185,129,.15)!important;border:1px solid rgba(16,185,129,.45)!important;cursor:default!important;box-shadow:none!important}
+.btn-uploaded:hover{transform:none!important;background:rgba(16,185,129,.15)!important}
+:root[data-theme="dark"] .btn-uploaded{color:#34d399!important;background:rgba(16,185,129,.18)!important;border-color:rgba(16,185,129,.5)!important}
+.btn-too-big{color:var(--text-muted)!important;background:var(--btn-ghost-bg)!important;border:1px solid var(--panel-border)!important;cursor:not-allowed!important;box-shadow:none!important;opacity:.75}
+.btn-too-big:hover{transform:none!important;background:var(--btn-ghost-bg)!important}
+.btn-xs{padding:6px 12px;font-size:12px;border-radius:8px;gap:4px}
+.btn-xs svg{width:12px;height:12px}
+.table-wrap{overflow:auto;border:1px solid var(--panel-border);border-radius:12px;background:var(--input-bg);-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;min-width:640px}
+thead{background:var(--table-header-bg);position:sticky;top:0;z-index:1}
+th,td{padding:10px 12px;border-bottom:1px solid var(--table-border);text-align:left;vertical-align:middle;font-size:12.5px}
+th{font-family:'Outfit',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted)}
+tbody tr{transition:background .2s;cursor:pointer}
+tbody tr:hover{background:var(--table-row-hover)}
+tbody tr.selected{background:var(--row-selected-bg);box-shadow:inset 3px 0 0 var(--primary)}
+.mono{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;word-break:break-all}
+.badge{display:inline-flex;align-items:center;gap:6px;padding:3px 9px;border-radius:7px;font-size:11px;font-weight:600;line-height:1;border:1px solid transparent}
+.badge-src{background:var(--primary-glow);color:var(--primary-strong);border-color:var(--panel-border)}
+.badge-idle{background:rgba(100,116,139,.1);color:#475569;border-color:rgba(100,116,139,.15)}
+:root[data-theme="dark"] .badge-idle{background:rgba(148,163,184,.15);color:#cbd5e1}
+.pagination{display:flex;justify-content:center;align-items:center;gap:14px;margin-top:12px;padding-top:12px;border-top:1px solid var(--table-border)}
+.pagination .page-info{font-size:12.5px;color:var(--text-muted);font-family:'JetBrains Mono',ui-monospace,monospace;min-width:72px;text-align:center}
+.login-overlay{position:fixed;inset:0;z-index:1500;display:flex;align-items:center;justify-content:center;background:var(--bg-gradient);padding:24px}
+.login-overlay.hidden{display:none}
+.login-box{width:100%;max-width:380px;padding:32px 28px;background:var(--panel);border:1px solid var(--panel-border);border-radius:22px;box-shadow:var(--shadow);backdrop-filter:blur(16px)}
+.login-box h2{font-family:'Outfit',sans-serif;font-size:22px;font-weight:800;margin-bottom:6px;letter-spacing:-.02em;display:flex;align-items:center;justify-content:center;gap:8px}
+.login-box h2 svg{flex-shrink:0;border-radius:7px;display:block;transform:translateY(-2px)}
+.login-box p{color:var(--text-muted);font-size:13px;margin-bottom:22px;line-height:1.6;text-align:center}
+.login-box .field{margin-bottom:12px}
+.login-box .field input{width:100%;padding:11px 14px;border:1px solid var(--input-border);border-radius:10px;background:var(--input-bg);color:var(--text);font-family:inherit;font-size:14px;outline:none}
+.login-box .field input:focus{border-color:var(--input-focus);box-shadow:0 0 0 3px var(--primary-glow)}
+.login-box .err{display:none;padding:10px 14px;border-radius:10px;background:rgba(185,28,28,.1);border:1px solid rgba(185,28,28,.2);color:var(--danger);font-size:13px;margin-bottom:14px}
+.login-box .err.show{display:block}
+.muted{color:var(--text-muted);font-size:12.5px}
+.empty{padding:20px;text-align:center;color:var(--text-muted);font-size:13px}
+.flex-between{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+.banner{display:none;padding:10px 14px;border-radius:10px;font-size:12.5px;font-weight:600;line-height:1.5;margin-bottom:10px;align-items:center;gap:8px}
+.banner.show{display:flex}
+.banner.warn{background:var(--warn-bg);border:1px solid var(--warn-border);color:var(--warn-text)}
+.banner.error{background:rgba(185,28,28,.1);border:1px solid rgba(185,28,28,.3);color:var(--danger)}
+:root[data-theme="dark"] .banner.error{background:rgba(239,68,68,.15);color:#fca5a5}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(24px);padding:11px 18px;border-radius:12px;background:var(--panel);border:1px solid var(--panel-border);color:var(--text);font-size:13.5px;font-weight:600;box-shadow:var(--shadow);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);opacity:0;visibility:hidden;pointer-events:none;transition:transform .3s ease,opacity .25s ease,visibility 0s linear .3s;z-index:1600;max-width:90vw}
+.toast.show{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0);transition:transform .3s ease,opacity .25s ease,visibility 0s linear 0s}
+.toast.success{border-color:rgba(16,185,129,.3)}
+.toast.error{border-color:rgba(239,68,68,.3);color:var(--danger)}
+.site-footer{text-align:center;font-size:11.5px;color:var(--text-muted);padding-top:18px;line-height:1.7}
+.site-footer a{color:var(--primary);text-decoration:none}
+.site-footer a:hover{text-decoration:underline}
+
+.modal-overlay{position:fixed;inset:0;z-index:1800;display:flex;align-items:center;justify-content:center;background:var(--modal-mask);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);padding:24px;opacity:0;visibility:hidden;transition:opacity .25s ease,visibility 0s linear .25s}
+.modal-overlay.show{opacity:1;visibility:visible;transition:opacity .25s ease,visibility 0s linear 0s}
+.modal-box{width:100%;max-width:400px;padding:22px 22px 18px;background:var(--panel);border:1px solid var(--panel-border);border-radius:18px;box-shadow:var(--modal-shadow);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);transform:translateY(12px) scale(.97);transition:transform .3s cubic-bezier(.22,.61,.36,1)}
+.modal-overlay.show .modal-box{transform:translateY(0) scale(1)}
+.modal-head{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.modal-icon{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:10px;background:var(--primary-glow);color:var(--primary-strong);flex-shrink:0}
+.modal-icon svg{width:16px;height:16px}
+.modal-icon.danger{background:rgba(239,68,68,.12);color:var(--danger)}
+.modal-title{font-family:'Outfit',sans-serif;font-size:16px;font-weight:800;letter-spacing:-.01em;color:var(--text)}
+.modal-msg{font-size:13.5px;line-height:1.65;color:var(--text-muted);white-space:pre-line;margin:0 0 18px 42px}
+.modal-actions{display:flex;gap:8px;justify-content:flex-end}
+.modal-actions button{min-width:78px}
+.modal-cancel{color:var(--text);background:var(--btn-ghost-bg)}
+.modal-cancel:hover{background:var(--btn-ghost-hover)}
+.modal-ok{color:#fff;background:linear-gradient(135deg,var(--primary),#0891b2);box-shadow:0 4px 14px var(--primary-glow)}
+.modal-ok:hover{background:linear-gradient(135deg,var(--primary-hover),#0e7490)}
+.modal-ok.danger{background:linear-gradient(135deg,var(--danger),#dc2626);box-shadow:0 4px 14px rgba(239,68,68,.25)}
+.modal-ok.danger:hover{background:linear-gradient(135deg,#ef4444,#b91c1c)}
+
+.modal-icon.spin svg{animation:modal-spin .9s linear infinite}
+@keyframes modal-spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+.progress-list{text-align:left;margin:0}
+.progress-item{display:flex;align-items:center;gap:10px;padding:10px 0;font-size:13.5px;color:var(--text);line-height:1.5}
+.progress-item + .progress-item{border-top:1px dashed var(--panel-border)}
+.progress-icon{flex-shrink:0;width:22px;height:22px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;border:1.5px solid var(--panel-border);color:var(--text-muted);background:var(--input-bg)}
+.progress-icon.running{border-color:var(--primary);color:var(--primary);background:var(--primary-glow)}
+.progress-icon.running svg{animation:modal-spin .9s linear infinite}
+.progress-icon.done{border-color:#10b981;color:#fff;background:#10b981}
+.progress-icon.err{border-color:var(--danger);color:#fff;background:var(--danger)}
+.progress-text{flex:1;min-width:0;word-break:break-word}
+.progress-tip{margin-top:12px;padding-top:12px;border-top:1px dashed var(--panel-border);font-size:12.5px;color:var(--text-muted);text-align:left;line-height:1.6}
+
+.song-title{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.song-artist-m{display:none}
+
+@media(max-width:900px){
+  .grid-top{grid-template-columns:1fr}
+  .header{grid-template-columns:1fr auto}
+  .github-corner svg{width:64px;height:64px}
+  #detailCard.mobile-hidden{display:none}
+  .detail-close{display:inline-flex}
+}
+@media(max-width:640px){
+  .shell{padding:12px 0 88px}
+  .header{grid-template-columns:1fr auto;margin-bottom:10px}
+  .brand .cloud-logo{width:20px;height:20px}
+  .brand-title{font-size:16px;line-height:20px}
+  .brand-sub{font-size:11px;line-height:20px}
+  .github-corner svg{width:40px;height:40px}
+  .card{padding:12px}
+  .card-title{font-size:12px;margin-bottom:8px}
+  .search-row input{padding:9px 12px;font-size:13.5px}
+  .search-row button{padding:9px 16px;font-size:13px}
+  .search-options{grid-template-columns:repeat(2,1fr)}
+  .search-options select{padding:7px 9px;font-size:12px}
+  .rate-limit-bar{height:24px}
+  .rate-limit-label{font-size:11px;padding:0 10px}
+  .detail .cover{width:84px;height:84px}
+  .detail-name{font-size:15px}
+
+  #panel-results th:nth-child(3), #panel-results td:nth-child(3),
+  #panel-results th:nth-child(4), #panel-results td:nth-child(4),
+  #panel-library th:nth-child(3), #panel-library td:nth-child(3),
+  #panel-library th:nth-child(5), #panel-library td:nth-child(5){display:none}
+
+  .table-wrap table{min-width:0;width:100%;table-layout:fixed}
+
+  #panel-results th:nth-child(1), #panel-results td:nth-child(1){width:18px !important;padding-left:2px;padding-right:0}
+  #panel-results th:nth-child(5), #panel-results td:nth-child(5){width:60px !important;padding:8px 0}
+  #panel-results th:nth-child(6), #panel-results td:nth-child(6){width:90px !important;padding-left:18px;padding-right:2px}
+
+  #panel-library th:nth-child(1), #panel-library td:nth-child(1){width:18px !important;padding-left:2px;padding-right:0}
+  #panel-library th:nth-child(4), #panel-library td:nth-child(4){width:60px !important;padding:8px 0}
+  #panel-library th:nth-child(6), #panel-library td:nth-child(6){width:48px !important;padding-left:18px;padding-right:2px}
+
+  th, td{padding:8px 2px;font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  th{letter-spacing:.02em}
+
+  .song-cell{overflow:hidden;position:relative}
+  .song-title{
+    display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+    line-height:1.45;font-weight:600;
+  }
+  .song-artist-m{
+    display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+    font-size:10.5px;line-height:1.45;color:var(--text-muted);margin-top:1px;
+  }
+  #panel-library td:nth-child(4) .badge{font-size:9.5px;padding:1px 4px}
+
+  td .btn-xs{padding:6px;gap:0;border-radius:8px;min-width:28px}
+  td .btn-xs span{display:none}
+  td .btn-xs svg{width:14px;height:14px}
+  #panel-results td:nth-child(6){white-space:nowrap}
+
+  .modal-box{padding:18px 16px 14px;border-radius:16px}
+  .modal-msg{margin-left:0}
+  .modal-actions button{flex:1}
+
+  .tabs{
+    flex-wrap:nowrap;
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+  }
+  .tabs::-webkit-scrollbar{display:none}
+  .tabs-spacer{flex:1 1 0;min-width:0}
+  .tab{flex-shrink:0;white-space:nowrap}
+  .tabs-deploy{
+    width:auto;
+    margin-left:6px;
+    margin-top:0;
+    margin-bottom:2px;
+    flex-shrink:0;
+    padding:6px 10px;
+    font-size:11.5px;
+    gap:4px;
+  }
+  .tabs-deploy svg{width:12px;height:12px}
+}
+
+@keyframes mp-soundwave{from{transform:scale(1);opacity:.9}to{transform:scale(var(--wave-scale,1.8));opacity:0}}
+.music-player{position:fixed;left:20px;bottom:20px;z-index:1050;width:0;height:0}
+.mp-panel{position:absolute;left:0;bottom:0;display:flex;align-items:center;gap:12px;padding:10px;border-radius:16px;background:var(--input-bg);border:1px solid var(--panel-border);box-shadow:var(--shadow);transform-origin:left bottom;transform:scale(1);opacity:1;pointer-events:auto;transition:transform 850ms cubic-bezier(.22,.61,.36,1),opacity .45s ease,border-radius .55s cubic-bezier(.22,.61,.36,1)}
+.music-player.collapsed .mp-panel{transform:scale(.001);opacity:0;pointer-events:none;border-radius:50%;transition:transform 850ms cubic-bezier(.22,.61,.36,1),opacity .45s ease .40s,border-radius .7s cubic-bezier(.22,.61,.36,1) .30s}
+.mp-shimmer{position:absolute;inset:0;border-radius:inherit;overflow:hidden;pointer-events:none;z-index:0}
+.mp-shimmer::after{content:'';position:absolute;top:0;left:-150%;width:100%;height:100%;transform:skewX(-30deg);background:linear-gradient(to right,rgba(255,255,255,0) 0%,rgba(255,255,255,.05) 45%,rgba(255,255,255,.08) 50%,rgba(255,255,255,.05) 55%,rgba(255,255,255,0) 100%);transition:left .6s cubic-bezier(.25,1,.5,1);pointer-events:none}
+.mp-panel:hover .mp-shimmer::after{left:150%}
+.mp-disc{position:relative;z-index:1;flex-shrink:0;cursor:pointer;display:flex;align-items:center;justify-content:center;border-radius:50%;overflow:hidden;width:80px;height:80px;aspect-ratio:1/1}
+.mp-disc-rotating{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;border-radius:50%;overflow:hidden;will-change:transform;backface-visibility:hidden}
+.mp-disc-rotating::after{content:'';position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 88deg,transparent 0%,rgba(255,255,255,.35) 8%,transparent 18%,transparent 50%,rgba(255,255,255,.35) 58%,transparent 68%);z-index:1;pointer-events:none}
+.mp-disc-base{position:absolute;width:100%;height:100%;background:#1a1a1a;border-radius:50%;z-index:0}
+.mp-disc-img{object-fit:cover;border-radius:50%;position:relative;z-index:2;aspect-ratio:1/1;backface-visibility:hidden;width:50px;height:50px}
+.mp-info{position:relative;z-index:1;flex:0 0 auto;min-width:260px;display:flex;flex-direction:column;align-items:stretch}
+.mp-track{display:flex;flex-direction:column}
+.mp-title{font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:260px;color:var(--text)}
+.mp-artist{font-size:11px;color:var(--text-muted);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:260px}
+.mp-progress{display:flex;flex-direction:column;gap:4px;align-self:stretch;margin-top:6px}
+.mp-bar{width:100%;height:4px;background:var(--progress-bg,rgba(0,0,0,.08));border-radius:2px;cursor:pointer;position:relative;overflow:hidden}
+.mp-fill{height:100%;background:var(--progress-fill,var(--primary));border-radius:2px;width:0%;transition:width .1s linear}
+.mp-time{display:flex;justify-content:space-between;font-size:11px;padding:0 2px;color:var(--text-muted)}
+.mp-controls{display:flex;align-items:center;gap:8px;justify-content:center;align-self:stretch;margin-top:8px;flex-wrap:nowrap}
+.mp-btn{background:transparent;border:1px solid var(--panel-border);color:var(--text-muted);cursor:pointer;padding:0;opacity:.85;transition:all .3s cubic-bezier(.23,1,.32,1);display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;flex-shrink:0;position:relative;overflow:hidden;outline:none}
+.mp-btn:hover{opacity:1;transform:scale(1.08);border-color:var(--primary);background:var(--primary-glow);color:var(--primary-strong)}
+.mp-btn.play{width:36px;height:36px;opacity:1;border-color:var(--primary);background:var(--primary-glow);color:var(--primary-strong)}
+.mp-btn.active{border-color:var(--primary);background:var(--primary-glow);color:var(--primary-strong);opacity:1}
+.mp-btn svg{width:60%;height:60%;position:relative;z-index:2;display:block}
+
+.mp-vol-wrap{position:relative;display:flex;align-items:center;flex-shrink:0}
+.mp-vol-slider{position:absolute;bottom:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(8px) scale(.9);transform-origin:50% 100%;padding:10px 12px;background:var(--input-bg);border:1px solid var(--panel-border);border-radius:12px;box-shadow:var(--shadow);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .2s ease, transform .28s cubic-bezier(.22,.61,.36,1), visibility 0s linear .28s;z-index:20;display:flex;align-items:center}
+.mp-vol-slider.show{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0) scale(1);transition:opacity .2s ease, transform .28s cubic-bezier(.22,.61,.36,1), visibility 0s linear 0s}
+.mp-vol-slider input{width:110px;cursor:pointer;-webkit-appearance:none;appearance:none;height:4px;border-radius:2px;outline:none;background:linear-gradient(to right,var(--slider-fill,var(--primary)) 0%,var(--slider-fill,var(--primary)) var(--slider-pct,50%),var(--slider-bg,rgba(0,0,0,.08)) var(--slider-pct,50%),var(--slider-bg,rgba(0,0,0,.08)) 100%)}
+.mp-vol-slider input::-webkit-slider-thumb{-webkit-appearance:none;width:12px;height:12px;border-radius:50%;background:var(--slider-thumb,var(--primary));cursor:pointer}
+.mp-vol-slider input::-moz-range-thumb{width:12px;height:12px;border-radius:50%;background:var(--slider-thumb,var(--primary));cursor:pointer;border:none}
+
+.mp-ball{position:absolute;left:0;bottom:0;width:50px;height:50px;border-radius:50%;background:var(--input-bg);border:1px solid var(--panel-border);box-shadow:var(--shadow);cursor:pointer;display:flex;align-items:center;justify-content:center;overflow:visible;opacity:0;transform:scale(.7);pointer-events:none;transition:opacity .4s ease,transform .5s cubic-bezier(.22,.61,.36,1)}
+.music-player.collapsed .mp-ball{opacity:1;transform:scale(1);pointer-events:auto;transition:opacity .5s ease .38s,transform .55s cubic-bezier(.22,.61,.36,1) .38s}
+.music-player.collapsed .mp-ball.dim{opacity:.4;transition:opacity .5s ease}
+.music-player.collapsed .mp-ball.dim:hover{opacity:1}
+.mp-ball-inner{position:absolute;inset:0;border-radius:50%;overflow:hidden;display:flex;align-items:center;justify-content:center;will-change:transform;backface-visibility:hidden}
+.mp-ball-inner::after{content:'';position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 88deg,transparent 0%,rgba(255,255,255,.35) 8%,transparent 18%,transparent 50%,rgba(255,255,255,.35) 58%,transparent 68%);z-index:1;pointer-events:none}
+.mp-ball-base{position:absolute;inset:0;background:#1a1a1a;border-radius:50%;z-index:0}
+.mp-ball-img{width:56%;height:56%;object-fit:cover;border-radius:50%;aspect-ratio:1/1;position:relative;z-index:2;display:none}
+.mp-ball-overlay{position:absolute;inset:0;width:100%;height:100%;background:rgba(0,0,0,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;opacity:0;transition:opacity .3s ease;pointer-events:none;z-index:5}
+.mp-ball:hover .mp-ball-overlay{opacity:1}
+.mp-ball-overlay svg{width:18px;height:18px}
+.mp-ball-waves{position:absolute;inset:0;pointer-events:none;z-index:-1}
+.mp-ball-wave{position:absolute;inset:0;border-radius:50%;border:var(--wave-stroke,2.8px) solid var(--wave-color,rgba(0,0,0,.35));opacity:0;will-change:transform,opacity;transform:scale(1)}
+.music-player.collapsed.playing .mp-ball-wave{animation:mp-soundwave var(--wave-speed,2.4s) infinite ease-out}
+.mp-playlist{position:fixed;z-index:1052;width:280px;background:var(--input-bg);border-radius:12px;border:1px solid var(--panel-border);box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column;opacity:0;transform:scale(.95) translateY(10px);pointer-events:none;transition:all .3s cubic-bezier(.23,1,.32,1)}
+.mp-playlist.show{opacity:1;transform:scale(1) translateY(0);pointer-events:auto}
+.mp-pl-header{padding:12px;font-weight:600;font-size:14px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--panel-border);color:var(--text)}
+.mp-pl-close{cursor:pointer;opacity:.6;transition:opacity .2s;display:flex;align-items:center;justify-content:center;color:var(--text)}
+.mp-pl-close:hover{opacity:1}
+.mp-pl-close svg{width:18px;height:18px}
+.mp-pl-inner{max-height:260px;overflow-y:auto}
+.mp-pl-item{padding:10px 12px;font-size:13px;cursor:pointer;border-bottom:1px solid var(--panel-border);transition:background .2s;color:var(--text)}
+.mp-pl-item:last-child{border-bottom:none}
+.mp-pl-item:hover{background:var(--table-row-hover)}
+.mp-pl-item.active{background:var(--primary-glow,rgba(15,118,110,.12));font-weight:600;color:var(--primary-strong)}
+</style>
+</head>
+<body>
+
+<div id="loginOverlay" class="login-overlay">
+  <a href="https://github.com/oyz8" target="_blank" rel="noopener" class="github-corner" aria-label="View source on GitHub">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+      <path class="gh-bg" d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+      <path class="gh-arm" style="transform-origin:130px 106px"
+        d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"></path>
+      <path class="gh-body"
+        d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"></path>
+    </svg>
+  </a>
+
+  <div class="login-box">
+    <h2>
+      <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true">
+        <defs>
+          <linearGradient id="loginGrad" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#14b8a6"/>
+            <stop offset="100%" stop-color="#0891b2"/>
+          </linearGradient>
+        </defs>
+        <rect width="24" height="24" rx="6" ry="6" fill="url(#loginGrad)"/>
+        <g stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none">
+          <path d="M3 18v-6a9 9 0 0 1 18 0v6"/>
+          <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/>
+        </g>
+      </svg>
+      <span>CF Music · GitHub</span>
+    </h2>
+    <p>请输入访问密码以继续</p>
+    <div class="err" id="loginErr">密码错误</div>
+    <div class="field">
+      <input id="pwdInput" type="password" placeholder="访问密码" autocomplete="current-password" />
+    </div>
+    <button id="loginBtn" class="btn-primary" style="width:100%;">登 录</button>
+  </div>
+</div>
+
+<div class="shell" id="app" style="display:none;">
+  <header class="header">
+    <div class="brand">
+      <svg class="cloud-logo" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+        <defs>
+          <linearGradient id="brandGrad" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#14b8a6"/>
+            <stop offset="100%" stop-color="#0891b2"/>
+          </linearGradient>
+        </defs>
+        <rect width="24" height="24" rx="6" ry="6" fill="url(#brandGrad)"/>
+        <g stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none">
+          <path d="M3 18v-6a9 9 0 0 1 18 0v6"/>
+          <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/>
+        </g>
+      </svg>
+      <span class="brand-title">CF Music</span>
+      <span class="brand-sub">· GitHub</span>
+    </div>
+    <div class="header-right">
+      <button id="logoutBtn" class="btn-ghost btn-xs">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+        <span>退出</span>
+      </button>
+      <button id="themeToggle" class="theme-toggle" aria-label="切换主题">
+        <svg class="sun-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="moon-icon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="grid-top">
+    <section class="card search-panel">
+      <div class="card-title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <span>搜索</span>
+      </div>
+      <div class="search-row">
+        <input id="kwInput" type="text" placeholder="歌名 / 歌手 / 专辑" />
+        <button id="searchBtn" class="btn-primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <span>搜索</span>
+        </button>
+      </div>
+      <div class="search-options">
+        <select id="sourceSel" title="音源">
+          <option value="netease" selected>netease</option>
+          <option value="tencent">tencent</option>
+          <option value="kuwo">kuwo</option>
+          <option value="tidal">tidal</option>
+          <option value="qobuz">qobuz</option>
+          <option value="joox">joox</option>
+          <option value="bilibili">bilibili</option>
+          <option value="apple">apple</option>
+          <option value="ytmusic">ytmusic</option>
+          <option value="spotify">spotify</option>
+        </select>
+        <select id="qualitySel" title="音质">
+          <option value="128K">128K</option>
+          <option value="192K">192K</option>
+          <option value="320K" selected>320K</option>
+          <option value="16bit 无损">16bit 无损</option>
+          <option value="24bit 无损">24bit 无损</option>
+        </select>
+      </div>
+
+      <div class="rate-limit">
+        <div class="rate-limit-bar">
+          <div class="rate-limit-fill" id="rateLimitFill"></div>
+          <div class="rate-limit-label">
+            <span>浏览器直连配额</span>
+            <span id="rateLimitText">50 / 50</span>
+          </div>
+        </div>
+
+        <div class="rate-limit-bar">
+          <div class="rate-limit-fill" id="workerFill"
+               style="width:100%;background:linear-gradient(90deg,#0891b2,#7c3aed)"></div>
+          <div class="rate-limit-label">
+            <span>Worker 代理用量</span>
+            <span id="workerText">60 / 60</span>
+          </div>
+        </div>
+
+        <div class="rate-limit-hint" id="rateLimitHint">上次路径：—</div>
+      </div>
+    </section>
+
+    <section class="card detail-panel" id="detailCard">
+      <div class="card-title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+        <span>歌曲详情</span>
+        <button id="closeDetailBtn" class="detail-close" type="button" aria-label="关闭">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+
+      <div class="detail-empty" id="detailEmpty">
+        <div class="empty-emoji">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+        </div>
+        <div>从下方搜索结果中选择一首歌曲</div>
+      </div>
+
+      <div class="detail" id="detailContent" style="display:none;">
+        <img id="detailCover" class="cover" alt="cover" style="display:none;" />
+        <div id="detailCoverPh" class="cover ph">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+        </div>
+        <div class="detail-info">
+          <div id="detailName" class="detail-name">—</div>
+          <div id="detailArtist" class="detail-artist">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+            <span>—</span>
+          </div>
+          <div class="detail-badges">
+            <span class="badge badge-src" id="detailSrc">—</span>
+            <span class="badge badge-idle" id="detailQ">—</span>
+          </div>
+
+          <div class="listen-tip" id="listenTip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" fill="currentColor" stroke="none"/>
+              <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+              <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+            </svg>
+            <span id="listenTipText">已在左下角播放器中开始试听</span>
+          </div>
+
+          <div class="upload-row">
+            <button id="uploadBtn" class="btn-primary">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+              <span>上传到歌单库</span>
+            </button>
+          </div>
+          <div id="uploadStatus" class="muted"></div>
+        </div>
+      </div>
+
+      <div id="lyricBox"></div>
+    </section>
+  </div>
+
+  <section class="card results-card">
+    <div class="tabs">
+      <button class="tab active" data-tab="results">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <span>搜索结果</span>
+      </button>
+      <button class="tab" data-tab="library">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        <span>歌单列表</span>
+      </button>
+      <div class="tabs-spacer"></div>
+      <button id="saveDeployBtn" class="btn-primary btn-xs tabs-deploy" disabled title="有未部署的变更时可用">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
+        <span>保存并部署</span>
+      </button>
+    </div>
+
+    <div id="panel-results">
+      <div id="searchBanner" class="banner warn"></div>
+      <div class="flex-between" style="margin-bottom:10px;">
+        <div id="searchStatus" class="muted">输入关键词开始搜索</div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width:44px;">#</th>
+              <th>歌名 / 歌手</th>
+              <th style="width:160px;">歌手</th>
+              <th style="width:160px;">专辑</th>
+              <th style="width:80px;">源</th>
+              <th style="width:160px;">操作</th>
+            </tr>
+          </thead>
+          <tbody id="searchBody">
+            <tr><td colspan="6" class="empty">尚未搜索</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="pagination" id="searchPager" style="display:none;">
+        <button class="btn-ghost btn-xs" id="prevPageBtn" disabled>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+          <span>上一页</span>
+        </button>
+        <span class="page-info" id="pageInfo">第 1 页</span>
+        <button class="btn-ghost btn-xs" id="nextPageBtn" disabled>
+          <span>下一页</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div id="panel-library" style="display:none;">
+      <div class="flex-between" style="margin-bottom:10px;">
+        <div id="libStatus" class="muted">加载中…</div>
+        <div style="display:flex;gap:6px;">
+          <button id="refreshLibBtn" class="btn-primary btn-xs">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+            <span>刷新</span>
+          </button>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width:44px;">#</th>
+              <th>歌名 / 歌手</th>
+              <th style="width:160px;">歌手</th>
+              <th style="width:80px;">源</th>
+              <th style="width:130px;">ID</th>
+              <th style="width:140px;">操作</th>
+            </tr>
+          </thead>
+          <tbody id="libBody">
+            <tr><td colspan="6" class="empty">加载中…</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    CF Music · GitHub 歌单库<br>
+    API 出处 <a href="https://music.gdstudio.xyz" target="_blank" rel="noopener">GD音乐台</a>
+  </footer>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<div id="modalOverlay" class="modal-overlay" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="modal-box">
+    <div class="modal-head">
+      <span id="modalIcon" class="modal-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="12" y1="8" x2="12" y2="12"/>
+          <line x1="12" y1="16" x2="12.01" y2="16"/>
+        </svg>
+      </span>
+      <div id="modalTitle" class="modal-title">确认操作</div>
+    </div>
+    <div id="modalMsg" class="modal-msg"></div>
+    <div class="modal-actions">
+      <button id="modalCancel" class="modal-cancel" type="button">取消</button>
+      <button id="modalOk" class="modal-ok" type="button">确定</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ============================================================
+// 前端主程序
+// ============================================================
+var GD_API = 'https://music-api.gdstudio.xyz/api.php';
+var $ = function(id) { return document.getElementById(id); };
+var AUTH_KEY = 'cf-music-pwd';
+var DIRTY_KEY = 'cf-music-dirty';
+var RATE   = { LIMIT: 50, WINDOW: 5*60*1000, KEY: 'cf-music-rate-window' };
+var W_RATE = { LIMIT: 60, WINDOW: 5*60*1000, KEY: 'cf-music-worker-window' };
+
+// GD API 的 size 字段实际单位是「字节」（文档写 KB 但实测是字节）
+var MAX_UPLOAD_SIZE_MB    = 50;
+var MAX_UPLOAD_SIZE_BYTES = MAX_UPLOAD_SIZE_MB * 1024 * 1024;
+
+var lastPath = '—';
+
+var SVG = {
+  magnifier : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>',
+  upload    : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>',
+  play      : '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>',
+  trash     : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg>',
+  check     : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>',
+  mic       : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>'
+};
+
+var SOURCE_LABELS = {
+  netease: '网易云', tencent: 'QQ音乐', kuwo: '酷我', tidal: 'Tidal',
+  qobuz: 'Qobuz', joox: 'JOOX', bilibili: 'B站', apple: 'Apple Music',
+  ytmusic: 'YouTube Music', spotify: 'Spotify'
+};
+function sourceLabel(s) { return SOURCE_LABELS[s] || s || '未知音源'; }
+
+var state = {
+  results: [], selected: null, library: [], uploaded: {}, sizeCache: {}, page: 1,
+  dirty: false, changeCount: 0,
+  unavailable: {}
+};
+
+function getToken() { return localStorage.getItem(AUTH_KEY) || ''; }
+function setToken(t) { localStorage.setItem(AUTH_KEY, t); }
+function clearToken() { localStorage.removeItem(AUTH_KEY); }
+function songKey(s, id) { return (s || '') + ':' + id; }
+function isTooBig(sizeBytes) { return sizeBytes && sizeBytes > MAX_UPLOAD_SIZE_BYTES; }
+function sizeLabel(sizeBytes) { return (sizeBytes / 1024 / 1024).toFixed(1) + ' MB'; }
+function isMobile() { return window.innerWidth <= 900; }
+function escapeHtml(s) {
+  return String(s === null || s === undefined ? '' : s).replace(/[&<>"']/g, function(c) {
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+  });
+}
+function fmtArtist(a) {
+  if (Array.isArray(a)) return a.map(String).join('、');
+  return a ? String(a) : '';
+}
+
+// ─── 脏标记 ─────────────────────────────
+function loadDirtyState() {
+  try {
+    var raw = localStorage.getItem(DIRTY_KEY);
+    if (!raw) { updateDeployBtn(); return; }
+    var obj = JSON.parse(raw);
+    state.dirty = !!obj.dirty;
+    state.changeCount = parseInt(obj.count, 10) || 0;
+  } catch (e) {}
+  updateDeployBtn();
+}
+function saveDirtyState() {
+  try {
+    if (state.dirty) {
+      localStorage.setItem(DIRTY_KEY, JSON.stringify({ dirty: true, count: state.changeCount }));
+    } else {
+      localStorage.removeItem(DIRTY_KEY);
+    }
+  } catch (e) {}
+}
+function markDirty(n) {
+  state.dirty = true;
+  state.changeCount = (state.changeCount || 0) + (n || 1);
+  saveDirtyState();
+  updateDeployBtn();
+}
+function clearDirty() {
+  state.dirty = false;
+  state.changeCount = 0;
+  saveDirtyState();
+  updateDeployBtn();
+}
+function updateDeployBtn() {
+  var btn = $('saveDeployBtn');
+  if (!btn) return;
+  btn.disabled = !state.dirty;
+  btn.classList.toggle('dirty', !!state.dirty);
+  var span = btn.querySelector('span');
+  if (span) {
+    var baseText = window.innerWidth <= 640 ? '部署' : '保存并部署';
+    span.textContent = state.dirty
+      ? (baseText + (state.changeCount ? '（' + state.changeCount + '）' : ''))
+      : baseText;
+  }
+  btn.title = state.dirty
+    ? ('共 ' + state.changeCount + ' 项变更待部署')
+    : '有未部署的变更时可用';
+}
+window.addEventListener('resize', updateDeployBtn);
+
+async function detectPendingFromCDN() {
+  if (!state.library.length) return 0;
+
+  // 只检查最新的 5 首（library 末尾是最新上传）
+  var checkCount = Math.min(5, state.library.length);
+  var pending = 0;
+
+  var checks = [];
+  for (var i = state.library.length - 1; i >= state.library.length - checkCount; i--) {
+    (function(s) {
+      if (!s.url) return;
+      checks.push(
+        fetch(s.url, { method: 'HEAD', cache: 'no-store' })
+          .then(function(resp) {
+            var ct = (resp.headers.get('Content-Type') || '').toLowerCase();
+            // text/html → SPA fallback，说明未部署
+            if (!resp.ok || ct.indexOf('text/html') >= 0) return 1;
+            return 0;
+          })
+          .catch(function() { return 0; })  // 网络错误视为不可判定，忽略
+      );
+    })(state.library[i]);
+  }
+
+  if (!checks.length) return 0;
+  var results = await Promise.all(checks);
+  for (var j = 0; j < results.length; j++) pending += results[j];
+  return pending;
+}
+
+async function syncDirtyFromServer() {
+  try {
+    var pendingCount = await detectPendingFromCDN();
+
+    if (pendingCount > 0) {
+      // CDN 上还有未部署的歌 → 强制标记 dirty
+      if (!state.dirty || state.changeCount !== pendingCount) {
+        state.dirty = true;
+        state.changeCount = pendingCount;
+        saveDirtyState();
+        updateDeployBtn();
+        console.log('[sync] CDN 检测到 ' + pendingCount + ' 首未部署，已启用部署按钮');
+      }
+    } else {
+      // CDN 上全部已部署 → 清除本地 dirty（用户可能在其他设备部署过）
+      if (state.dirty) {
+        console.log('[sync] CDN 已全部部署，清除本地 dirty');
+        clearDirty();
+      }
+    }
+  } catch (e) {
+    console.warn('[sync] 检测失败：', e);
+  }
+}
+
+// ─── Tab 切换 ─────────────────────────────
+function switchTab(tab) {
+  document.querySelectorAll('.tab').forEach(function(b) {
+    b.classList.toggle('active', b.dataset.tab === tab);
+  });
+  $('panel-results').style.display = tab === 'results' ? '' : 'none';
+  $('panel-library').style.display = tab === 'library' ? '' : 'none';
+}
+function switchToResultsTab() {
+  var resultsTab = document.querySelector('.tab[data-tab="results"]');
+  if (resultsTab && !resultsTab.classList.contains('active')) switchTab('results');
+}
+
+document.querySelectorAll('.tab').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    switchTab(btn.dataset.tab);
+    if (btn.dataset.tab === 'library') loadLibrary();
+  });
+});
+
+// ─── 详情卡：移动端默认隐藏，选中歌曲时展开 ─────
+$('closeDetailBtn').addEventListener('click', function() {
+  $('detailCard').classList.add('mobile-hidden');
+  document.querySelectorAll('#searchBody tr.selected').forEach(function(t) {
+    t.classList.remove('selected');
+  });
+});
+
+window.addEventListener('resize', function() {
+  if (!isMobile()) {
+    $('detailCard').classList.remove('mobile-hidden');
+  }
+});
+
+// ─── 通用确认弹窗 ────────────────────────
+var _modalOpen = false;
+function showConfirm(message, opts) {
+  opts = opts || {};
+  return new Promise(function(resolve) {
+    if (_modalOpen) { resolve(false); return; }
+    _modalOpen = true;
+
+    var overlay = $('modalOverlay');
+    var iconEl  = $('modalIcon');
+    var titleEl = $('modalTitle');
+    var msgEl   = $('modalMsg');
+    var okBtn   = $('modalOk');
+    var cancelBtn = $('modalCancel');
+
+    titleEl.textContent = opts.title || '确认操作';
+    msgEl.innerHTML     = String(message || '');
+    okBtn.textContent   = opts.okText || '确定';
+    cancelBtn.textContent = opts.cancelText || '取消';
+    cancelBtn.style.display = '';
+
+    iconEl.className = 'modal-icon' + (opts.danger ? ' danger' : '');
+    iconEl.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>';
+    okBtn.className  = 'modal-ok' + (opts.danger ? ' danger' : '');
+
+    overlay.setAttribute('aria-hidden', 'false');
+    void overlay.offsetWidth;
+    overlay.classList.add('show');
+
+    function cleanup() {
+      overlay.classList.remove('show');
+      overlay.setAttribute('aria-hidden', 'true');
+      okBtn.removeEventListener('click', onOk);
+      cancelBtn.removeEventListener('click', onCancel);
+      overlay.removeEventListener('click', onOverlay);
+      document.removeEventListener('keydown', onKey);
+      _modalOpen = false;
+    }
+    function close(result) { cleanup(); resolve(result); }
+    function onOk() { close(true); }
+    function onCancel() { close(false); }
+    function onOverlay(e) { if (e.target === overlay) close(false); }
+    function onKey(e) {
+      if (e.key === 'Escape') { e.preventDefault(); close(false); }
+      else if (e.key === 'Enter') { e.preventDefault(); close(true); }
+    }
+
+    okBtn.addEventListener('click', onOk);
+    cancelBtn.addEventListener('click', onCancel);
+    overlay.addEventListener('click', onOverlay);
+    document.addEventListener('keydown', onKey);
+
+    setTimeout(function() { try { okBtn.focus(); } catch (_) {} }, 60);
+  });
+}
+
+// ─── 进度弹窗 ─────────────────────────
+function progItem(type, text) {
+  var svgSpin  = '<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>';
+  var svgCheck = '<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
+  var svgX     = '<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>';
+  var svgDot   = '<svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/></svg>';
+  var icon;
+  if (type === 'running') icon = '<span class="progress-icon running">' + svgSpin  + '</span>';
+  else if (type === 'done') icon = '<span class="progress-icon done">'    + svgCheck + '</span>';
+  else if (type === 'err')  icon = '<span class="progress-icon err">'     + svgX     + '</span>';
+  else                      icon = '<span class="progress-icon">'         + svgDot   + '</span>';
+  return '<div class="progress-item">' + icon + '<span class="progress-text">' + text + '</span></div>';
+}
+
+function openProgressModal() {
+  var overlay = $('modalOverlay');
+  var iconEl  = $('modalIcon');
+  var titleEl = $('modalTitle');
+  var msgEl   = $('modalMsg');
+  var okBtn   = $('modalOk');
+  var cancelBtn = $('modalCancel');
+
+  titleEl.textContent = '处理中…';
+  msgEl.innerHTML     = '<div class="progress-list"></div>';
+  iconEl.className    = 'modal-icon spin';
+  iconEl.innerHTML    = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>';
+  okBtn.style.display     = 'none';
+  cancelBtn.style.display = 'none';
+
+  overlay.setAttribute('aria-hidden', 'false');
+  void overlay.offsetWidth;
+  overlay.classList.add('show');
+
+  function cleanup() {
+    overlay.classList.remove('show');
+    overlay.setAttribute('aria-hidden', 'true');
+    okBtn.removeEventListener('click', onOk);
+    cancelBtn.style.display = '';
+    _modalOpen = false;
+  }
+  function onOk() { cleanup(); }
+  _modalOpen = true;
+
+  return {
+    update: function(html) {
+      var list = msgEl.querySelector('.progress-list');
+      if (list) list.innerHTML = html;
+    },
+    finish: function(opts) {
+      opts = opts || {};
+      titleEl.textContent = opts.title || '完成';
+      msgEl.innerHTML     = '<div class="progress-list">' + (opts.message || '') + '</div>';
+      iconEl.className    = 'modal-icon' + (opts.type === 'error' ? ' danger' : '');
+      if (opts.type === 'error') {
+        iconEl.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>';
+      } else {
+        iconEl.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
+      }
+      okBtn.style.display = '';
+      okBtn.disabled      = false;
+      okBtn.textContent   = opts.buttonText || '完成';
+      okBtn.className     = 'modal-ok' + (opts.type === 'error' ? ' danger' : '');
+      okBtn.addEventListener('click', onOk);
+      try { okBtn.focus(); } catch (_) {}
+    }
+  };
+}
+
+// ─── 友好错误提示 ───────────────────────────
+function friendlyError(e) {
+  var msg = String((e && e.message) || e || '');
+  var low = msg.toLowerCase();
+
+  if (/文件写入冲突|并发冲突/i.test(msg) ||
+      (/github\s+(put|delete)/i.test(msg) && /409/.test(msg)) ||
+      /is at .* but expected/i.test(msg)) {
+    return '文件写入冲突（另一个上传正在进行中），请等 3-5 秒后重试';
+  }
+
+  if (/github\s+(put|delete|get)\s+/i.test(msg)) {
+    return 'GitHub 写入失败，请稍后重试：' + msg.slice(0, 100);
+  }
+
+  if (/429|403|频率|限制|限流|配额|rate\s*limit|forbidden|forbidd/i.test(low)) {
+    return '音乐服务请求过于频繁，请等待约 1-2 分钟后重试';
+  }
+  if (/50[0-9]|service\s*temporarily|unknown\s*error|bad\s*gateway|upstream/i.test(low)) {
+    return '上游音乐服务正在维护中，请稍后重试';
+  }
+  if (/failed to fetch|networkerror|cors|load failed|网络/i.test(low)) {
+    return '网络连接异常，请检查网络后重试';
+  }
+  if (/401|unauthorized|登录已失效/i.test(low)) {
+    return '登录已失效，请重新登录';
+  }
+  return msg || '加载失败，请稍后重试';
+}
+
+// ─── 配额 ─────────────────────────
+function rateRead() {
+  try {
+    var raw = localStorage.getItem(RATE.KEY);
+    if (!raw) return [];
+    var arr = JSON.parse(raw);
+    if (!Array.isArray(arr)) return [];
+    var now = Date.now();
+    return arr.filter(function(t) { return typeof t === 'number' && (now - t) < RATE.WINDOW; });
+  } catch (e) { return []; }
+}
+function rateWrite(arr) { try { localStorage.setItem(RATE.KEY, JSON.stringify(arr)); } catch (e) {} }
+function rateRemaining() { return Math.max(0, RATE.LIMIT - rateRead().length); }
+function rateConsume(n) {
+  n = n || 1;
+  var arr = rateRead(); var now = Date.now();
+  for (var i = 0; i < n; i++) arr.push(now);
+  rateWrite(arr); updateRateUI();
+}
+function rateResetInSec() {
+  var arr = rateRead(); if (!arr.length) return 0;
+  var earliest = Math.min.apply(null, arr);
+  return Math.max(0, Math.ceil((earliest + RATE.WINDOW - Date.now()) / 1000));
+}
+
+function workerRead() {
+  try {
+    var raw = localStorage.getItem(W_RATE.KEY);
+    if (!raw) return [];
+    var arr = JSON.parse(raw);
+    if (!Array.isArray(arr)) return [];
+    var now = Date.now();
+    return arr.filter(function(t) { return typeof t === 'number' && (now - t) < W_RATE.WINDOW; });
+  } catch (e) { return []; }
+}
+function workerWrite(arr) { try { localStorage.setItem(W_RATE.KEY, JSON.stringify(arr)); } catch (e) {} }
+function workerConsume(n) {
+  n = n || 1;
+  var arr = workerRead(); var now = Date.now();
+  for (var i = 0; i < n; i++) arr.push(now);
+  workerWrite(arr); updateRateUI();
+}
+function workerResetInSec() {
+  var arr = workerRead(); if (!arr.length) return 0;
+  var earliest = Math.min.apply(null, arr);
+  return Math.max(0, Math.ceil((earliest + W_RATE.WINDOW - Date.now()) / 1000));
+}
+
+function updateRateUI() {
+  var remaining = rateRemaining();
+  var pct = (remaining / RATE.LIMIT) * 100;
+  var text = $('rateLimitText'); var fill = $('rateLimitFill');
+  if (text) text.textContent = remaining + ' / ' + RATE.LIMIT;
+  if (fill) {
+    fill.style.width = pct + '%';
+    fill.classList.toggle('low', remaining <= 15 && remaining > 5);
+    fill.classList.toggle('critical', remaining <= 5);
+  }
+
+  var wRemaining = Math.max(0, W_RATE.LIMIT - workerRead().length);
+  var wPct = (wRemaining / W_RATE.LIMIT) * 100;
+  var wText = $('workerText'); var wFill = $('workerFill');
+  if (wText) wText.textContent = wRemaining + ' / ' + W_RATE.LIMIT;
+  if (wFill) {
+    wFill.style.width = wPct + '%';
+    wFill.classList.toggle('low', wRemaining <= 18 && wRemaining > 6);
+    wFill.classList.toggle('critical', wRemaining <= 6);
+  }
+
+  var hint = $('rateLimitHint');
+  if (hint) {
+    var parts = ['上次路径：' + lastPath];
+    if (remaining === 0) {
+      parts.push('浏览器配额已耗尽，期间自动走 Worker（约 ' + rateResetInSec() + 's 后恢复）');
+    }
+    hint.textContent = parts.join(' · ');
+  }
+}
+
+// ─── Toast / Banner ─────────────────────
+var toastTimer = null;
+function toast(msg, kind) {
+  var t = $('toast'); t.textContent = msg;
+  t.className = 'toast show' + (kind ? ' ' + kind : '');
+  if (toastTimer) clearTimeout(toastTimer);
+  toastTimer = setTimeout(function() { t.className = 'toast' + (kind ? ' ' + kind : ''); }, 3200);
+}
+function showBanner(type, text) { var b = $('searchBanner'); b.className = 'banner ' + type + ' show'; b.textContent = text; }
+function hideBanner() { $('searchBanner').className = 'banner warn'; }
+
+// ─── 主题 ─────────────────────────────
+$('themeToggle').addEventListener('click', function() {
+  var cur = document.documentElement.getAttribute('data-theme') || 'light';
+  var next = cur === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+});
+
+// ─── 登录 ─────────────────────────────
+function showLogin() { $('loginOverlay').classList.remove('hidden'); $('app').style.display = 'none'; setTimeout(function(){ $('pwdInput').focus(); }, 100); }
+function hideLogin() { $('loginOverlay').classList.add('hidden'); $('app').style.display = ''; $('loginErr').classList.remove('show'); $('pwdInput').value = ''; }
+function showLoginErr(msg) { var el = $('loginErr'); el.textContent = msg || '密码错误'; el.classList.add('show'); }
+async function doLogin() {
+  var pwd = $('pwdInput').value;
+  if (!pwd) { showLoginErr('请输入密码'); return; }
+  $('loginBtn').disabled = true; $('loginBtn').textContent = '验证中…';
+  try {
+    var r = await fetch('/api/login', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ password: pwd }) });
+    if (r.status === 401) { showLoginErr('密码错误'); return; }
+    if (!r.ok) { showLoginErr('验证失败: HTTP ' + r.status); return; }
+    var data = await r.json().catch(function() { return {}; });
+    var saved = data && data.token ? data.token : pwd;
+    setToken(saved);
+    hideLogin(); loadLibrary(); loadDirtyState();
+    syncDirtyFromServer();
+  } catch (e) { showLoginErr('连接失败: ' + e.message); }
+  finally { $('loginBtn').disabled = false; $('loginBtn').textContent = '登 录'; }
+}
+$('loginBtn').addEventListener('click', doLogin);
+$('pwdInput').addEventListener('keydown', function(e) { if (e.key === 'Enter') doLogin(); });
+$('logoutBtn').addEventListener('click', function() { clearToken(); showLogin(); });
+
+// ─── Worker API ─────────────────────────
+async function api(path, method, body) {
+  var opts = { method: method || 'GET', headers: {} };
+  var pwd = getToken(); if (pwd) opts.headers['X-Auth-Token'] = pwd;
+  if (body !== undefined) { opts.headers['Content-Type'] = 'application/json'; opts.body = JSON.stringify(body); }
+  var r = await fetch('/api' + path, opts);
+  if (r.status === 401) { clearToken(); showLogin(); throw new Error('登录已失效'); }
+  var data = await r.json().catch(function() { return {}; });
+  if (!r.ok || (data && data.ok === false)) throw new Error((data && data.error) || ('HTTP ' + r.status));
+  return data;
+}
+
+// ─── GD API：主动负载均衡 ─────────────
+var LB = {
+  KEY: 'cf-music-lb-counter',
+  RATIO_DIRECT: 1,
+  RATIO_TOTAL: 2,
+  read: function() {
+    try { var n = parseInt(localStorage.getItem(this.KEY) || '0', 10); return isNaN(n) ? 0 : n; }
+    catch (e) { return 0; }
+  },
+  write: function(n) { try { localStorage.setItem(this.KEY, String(n)); } catch (e) {} },
+  pick: function() {
+    var n = this.read();
+    var slot = n % this.RATIO_TOTAL;
+    this.write((n + 1) % 1000000);
+    return slot < this.RATIO_DIRECT ? 'direct' : 'worker';
+  }
+};
+
+function parseGdResponse(text) {
+  var data;
+  try { data = JSON.parse(text); }
+  catch (e) {
+    var t = text.toLowerCase();
+    if (t.indexOf('rate') >= 0 || t.indexOf('limit') >= 0 ||
+        t.indexOf('频率') >= 0 || t.indexOf('限制') >= 0) {
+      throw new Error('频率限制：GD API 5 分钟内不超 50 次请求，请稍后重试');
+    }
+    throw new Error('音乐 API 返回异常：' + text.slice(0, 120));
+  }
+  if (data && typeof data === 'object' && !Array.isArray(data)) {
+    var err = data.error || data.message;
+    if (err && typeof err === 'string') {
+      var el = err.toLowerCase();
+      if (el.indexOf('rate') >= 0 || el.indexOf('limit') >= 0 ||
+          err.indexOf('频率') >= 0 || err.indexOf('限制') >= 0) {
+        throw new Error('频率限制：GD API 5 分钟内不超 50 次请求，请稍后重试');
+      }
+    }
+  }
+  return data;
+}
+
+function gdFetchDirect(params) {
+  var url = new URL(GD_API);
+  for (var k in params) {
+    if (params[k] !== undefined && params[k] !== null && params[k] !== '') {
+      url.searchParams.set(k, String(params[k]));
+    }
+  }
+  return fetch(url.toString(), {
+    headers: { 'Referer': 'https://music.gdstudio.xyz/' },
+  }).then(function(resp) {
+    if (!resp.ok) {
+      if (resp.status === 429) throw new Error('频率限制：GD API 5 分钟内不超 50 次请求，请稍后重试');
+      if (resp.status === 403) throw new Error('访问被拒绝（可能已超过 GD API 频率限制）');
+      if (resp.status >= 500) throw new Error('音乐 API 服务器错误 (' + resp.status + ')');
+      throw new Error('音乐 API 错误 ' + resp.status);
+    }
+    return resp.text();
+  }).then(function(text) {
+    var data = parseGdResponse(text);
+    rateConsume(1);
+    return data;
+  });
+}
+
+function gdFetchViaWorker(params) {
+  var pwd = getToken();
+  var headers = { 'Content-Type': 'application/json' };
+  if (pwd) headers['X-Auth-Token'] = pwd;
+  return fetch('/api/gd', {
+    method: 'POST',
+    headers: headers,
+    body: JSON.stringify({ params: params }),
+  }).then(function(resp) {
+    if (resp.status === 401) { clearToken(); showLogin(); throw new Error('登录已失效'); }
+    if (resp.status === 429) throw new Error('Worker 代理配额已用尽，请稍后重试');
+    if (!resp.ok) {
+      return resp.text().then(function(t) {
+        throw new Error('Worker 代理失败 (' + resp.status + ')' + (t ? ': ' + t.slice(0, 120) : ''));
+      });
+    }
+    return resp.text();
+  }).then(function(text) {
+    var data = parseGdResponse(text);
+    workerConsume(1);
+    return data;
+  });
+}
+
+function gdFetch(params) {
+  var preferred = LB.pick();
+  if (rateRemaining() <= 0) preferred = 'worker';
+
+  var primary, backup, primaryName, backupName;
+  if (preferred === 'direct') {
+    primary = gdFetchDirect;     primaryName = 'direct';
+    backup  = gdFetchViaWorker;  backupName  = 'worker';
+  } else {
+    primary = gdFetchViaWorker;  primaryName = 'worker';
+    backup  = gdFetchDirect;     backupName  = 'direct';
+  }
+
+  return primary(params).then(function(data) {
+    lastPath = (primaryName === 'direct' ? '直连' : 'Worker');
+    updateRateUI();
+    return data;
+  }).catch(function(e) {
+    return backup(params).then(function(data) {
+      lastPath = (backupName === 'direct' ? '直连' : 'Worker') + '（回退）';
+      updateRateUI();
+      try { console.warn('[gd] ' + primaryName + ' 失败，已切换到 ' + backupName + '：', e.message); } catch (_) {}
+      return data;
+    }).catch(function(e2) {
+      lastPath = '全部失败';
+      updateRateUI();
+      try { console.error('[gd] 所有通道均失败', { primary: e.message, backup: e2.message }); } catch (_) {}
+      throw new Error(
+        primaryName + ' 失败：' + e.message + ' / ' +
+        backupName + ' 也失败：' + e2.message
+      );
+    });
+  });
+}
+
+function gdSearch(source, keyword, page) {
+  return gdFetch({ types: 'search', source: source, name: keyword, count: 10, pages: page || 1 }).then(function(data) {
+    if (Array.isArray(data)) return data;
+    if (data && typeof data === 'object') {
+      var keys = ['data', 'result', 'songs', 'list'];
+      for (var i = 0; i < keys.length; i++) if (Array.isArray(data[keys[i]])) return data[keys[i]];
+    }
+    return [];
+  });
+}
+
+function gdGetUrl(source, trackId, br) {
+  return gdFetch({ types: 'url', source: source, id: trackId, br: br || '320' }).then(function(d) {
+    if (!d) return { url: null, size: 0, br: -1, unavailable: true };
+    var brVal = parseInt(d.br, 10);
+    var url   = d.url ? String(d.url) : '';
+    if (!url || brVal === -1) {
+      return { url: null, size: 0, br: isNaN(brVal) ? -1 : brVal, unavailable: true };
+    }
+    return { url: url, size: parseInt(d.size, 10) || 0, br: brVal };
+  }).catch(function(e) {
+    return { url: null, size: 0, br: -1, unavailable: true, error: e };
+  });
+}
+function gdGetPic(source, picId) {
+  if (!picId) return Promise.resolve(null);
+  return gdFetch({ types: 'pic', source: source, id: picId, size: 500 }).then(function(d) { return d && d.url ? d.url : null; }).catch(function() { return null; });
+}
+function gdGetLyric(source, lyricId) {
+  if (!lyricId) return Promise.resolve({ lyric: '', tlyric: '' });
+  return gdFetch({ types: 'lyric', source: source, id: lyricId }).then(function(d) {
+    return { lyric: (d && d.lyric) || '', tlyric: (d && d.tlyric) || '' };
+  }).catch(function() { return { lyric: '', tlyric: '' }; });
+}
+function gdTrackAll(source, trackId, picId, lyricId, br) {
+  return Promise.all([
+    gdGetUrl(source, trackId, br),
+    gdGetPic(source, picId),
+    gdGetLyric(source, lyricId),
+  ]).then(function(arr) {
+    return {
+      url: arr[0].url,
+      size: arr[0].size,
+      br: arr[0].br,
+      unavailable: !!arr[0].unavailable,
+      pic_url: arr[1],
+      lyric: arr[2].lyric,
+      tlyric: arr[2].tlyric,
+    };
+  });
+}
+
+function qualityBr() {
+  var map = { '128K': '128', '192K': '192', '320K': '320', '16bit 无损': '740', '24bit 无损': '999' };
+  return map[$('qualitySel').value] || '320';
+}
+
+$('searchBtn').addEventListener('click', function() { doSearch(); });
+$('kwInput').addEventListener('keydown', function(e) { if (e.key === 'Enter') doSearch(); });
+$('prevPageBtn').addEventListener('click', function() { if (state.page <= 1) return; doSearch(state.page - 1); });
+$('nextPageBtn').addEventListener('click', function() { if (state.results.length < 10) return; doSearch(state.page + 1); });
+
+async function doSearch(page) {
+  var kw = $('kwInput').value.trim();
+  if (!kw) { toast('请输入关键词', 'error'); return; }
+  state.page = (typeof page === 'number' && page > 0) ? page : 1;
+
+  switchToResultsTab();
+
+  hideBanner();
+  var searchBtn = $('searchBtn');
+  searchBtn.disabled = true;
+  searchBtn.innerHTML = SVG.magnifier + '<span>搜索中…</span>';
+  $('searchStatus').textContent = '正在搜索…';
+  state.selected = null;
+  $('detailEmpty').style.display = ''; $('detailContent').style.display = 'none'; $('lyricBox').innerHTML = '';
+
+  try {
+    var results = await gdSearch($('sourceSel').value, kw, state.page);
+    state.results = results || [];
+    renderSearch();
+  } catch (e) {
+    console.error('[search] 原始错误:', e);
+    var friendly = friendlyError(e);
+    var isRate = /频率|限制|限流|配额|rate|429|403/i.test(e.message || '');
+    showBanner(isRate ? 'warn' : 'error', friendly);
+    $('searchStatus').textContent = isRate ? '请求受限，请稍后再试' : '';
+    if (!state.results.length) {
+      $('searchBody').innerHTML = '<tr><td colspan="6" class="empty">' + friendly + '</td></tr>';
+      updatePager();
+    }
+  } finally {
+    searchBtn.disabled = false;
+    searchBtn.innerHTML = SVG.magnifier + '<span>搜索</span>';
+  }
+}
+
+function updatePager() {
+  var pager = $('searchPager');
+  if (!pager) return;
+  if (!state.results.length) { pager.style.display = 'none'; return; }
+  pager.style.display = 'flex';
+  $('pageInfo').textContent = '第 ' + state.page + ' 页';
+  $('prevPageBtn').disabled = state.page <= 1;
+  $('nextPageBtn').disabled = state.results.length < 10;
+}
+
+function renderSearch() {
+  var tb = $('searchBody');
+  if (!state.results.length) {
+    tb.innerHTML = '<tr><td colspan="6" class="empty">没有找到结果</td></tr>';
+    $('searchStatus').textContent = '无结果';
+    updatePager(); return;
+  }
+  $('searchStatus').textContent = '找到 ' + state.results.length + ' 首（每页 10 条），点击行查看详情';
+  var html = '';
+  state.results.forEach(function(r, i) {
+    var src = r.source || '';
+    var key = songKey(src, r.id);
+    var isUp = !!state.uploaded[key];
+    var sz = state.sizeCache[key];
+    var uploadBtn;
+    if (isUp) {
+      uploadBtn = '<button class="btn-uploaded btn-xs" disabled>' + SVG.check + '<span>已上传</span></button>';
+    } else if (state.unavailable[key]) {
+      uploadBtn = '<button class="btn-too-big btn-xs" disabled title="该音源未返回音频（可能是音质不支持或曲目受限）">' + SVG.upload + '<span>无音频</span></button>';
+    } else if (isTooBig(sz)) {
+      uploadBtn = '<button class="btn-too-big btn-xs" disabled title="' + sizeLabel(sz) + '，超过 ' + MAX_UPLOAD_SIZE_MB + ' MB 上限">' + SVG.upload + '<span>过大</span></button>';
+    } else {
+      uploadBtn = '<button class="btn-success btn-xs" data-act="upload" data-idx="' + i + '">' + SVG.upload + '<span>上传</span></button>';
+    }
+    html += '<tr data-idx="' + i + '">' +
+      '<td>' + (i + 1) + '</td>' +
+      '<td class="song-cell">' +
+        '<div class="song-title">' + escapeHtml(r.name) + '</div>' +
+        '<div class="song-artist-m">' + escapeHtml(fmtArtist(r.artist)) + '</div>' +
+      '</td>' +
+      '<td>' + escapeHtml(fmtArtist(r.artist)) + '</td>' +
+      '<td>' + escapeHtml(r.album || '') + '</td>' +
+      '<td><span class="badge badge-src">' + escapeHtml(src) + '</span></td>' +
+      '<td><button class="btn-ghost btn-xs" data-act="pick" data-idx="' + i + '">' + SVG.play + '<span>试听</span></button> ' + uploadBtn + '</td>' +
+    '</tr>';
+  });
+  tb.innerHTML = html;
+  updatePager();
+}
+
+$('searchBody').addEventListener('click', async function(ev) {
+  ev.stopPropagation();
+  var tr = ev.target.closest('tr[data-idx]'); if (!tr) return;
+  var idx = parseInt(tr.dataset.idx); var song = state.results[idx]; if (!song) return;
+  document.querySelectorAll('#searchBody tr').forEach(function(t) { t.classList.remove('selected'); });
+  tr.classList.add('selected');
+  var btn = ev.target.closest('button[data-act]');
+  if (btn && btn.dataset.act === 'upload') { await uploadDirect(song, btn); return; }
+  await selectSong(song);
+});
+
+async function uploadDirect(song, btn) {
+  var br = qualityBr();
+  var key = songKey(song.source, song.id);
+  if (state.uploaded[key]) return;
+
+  if (state.unavailable[key]) {
+    toast('该音源未返回音频，请换音源或降低音质', 'error');
+    return;
+  }
+
+  if (isTooBig(state.sizeCache[key])) {
+    if (btn) {
+      btn.className = 'btn-too-big btn-xs';
+      btn.innerHTML = SVG.upload + '<span>过大</span>';
+      btn.disabled = true;
+      btn.removeAttribute('data-act');
+    }
+    toast('文件 ' + sizeLabel(state.sizeCache[key]) + '，超过 ' + MAX_UPLOAD_SIZE_MB + ' MB 上限', 'error');
+    return;
+  }
+
+  if (btn) { btn.disabled = true; btn.innerHTML = SVG.upload + '<span>获取中…</span>'; }
+  toast('正在获取音频直链…');
+
+  try {
+    var track = await gdTrackAll(song.source || 'netease', song.id, song.pic_id, song.lyric_id || song.id, br);
+
+    if (track.unavailable || !track.url) {
+      state.unavailable[key] = true;
+      if (btn) {
+        btn.className = 'btn-too-big btn-xs';
+        btn.innerHTML = SVG.upload + '<span>无音频</span>';
+        btn.disabled = true;
+        btn.removeAttribute('data-act');
+      }
+      throw new Error('当前音源（' + sourceLabel(song.source) + '）未返回音频，可能是该音源不支持此音质「' + $('qualitySel').value + '」或曲目受限。换音源或降低音质试试');
+    }
+
+    if (track.size) state.sizeCache[key] = track.size;
+
+    if (isTooBig(track.size)) {
+      if (btn) {
+        btn.className = 'btn-too-big btn-xs';
+        btn.innerHTML = SVG.upload + '<span>过大</span>';
+        btn.disabled = true;
+        btn.removeAttribute('data-act');
+      }
+      throw new Error('文件 ' + sizeLabel(track.size) + '，超过 ' + MAX_UPLOAD_SIZE_MB + ' MB 上限（请换音源或降低音质）');
+    }
+
+    if (btn) { btn.innerHTML = SVG.upload + '<span>推送中…</span>'; }
+    toast('正在推送到 GitHub…');
+
+    var data = await api('/upload', 'POST', {
+      source: song.source || 'netease',
+      track_id: song.id,
+      name: song.name,
+      artist: fmtArtist(song.artist),
+      audio_url: track.url,
+      pic_url: track.pic_url || '',
+      lyric: track.lyric || '',
+      br: br,
+    });
+
+    state.uploaded[key] = true;
+    markDirty(1);
+
+    if (btn) { btn.className = 'btn-uploaded btn-xs'; btn.innerHTML = SVG.check + '<span>已上传</span>'; btn.disabled = true; btn.removeAttribute('data-act'); }
+    toast((data.message || '上传成功') + '（记得点右上角「保存并部署」生效）', 'success');
+    loadLibrary();
+    if (state.selected && songKey(state.selected.source, state.selected.track_id) === key) syncDetailUploadBtn();
+  } catch (e) {
+    console.error('[upload] 原始错误:', e);
+    if (btn && !btn.classList.contains('btn-too-big')) {
+      btn.disabled = false;
+      btn.innerHTML = SVG.upload + '<span>上传</span>';
+    }
+    toast(friendlyError(e), 'error');
+  }
+}
+
+function syncDetailUploadBtn() {
+  var btn = $('uploadBtn'); if (!state.selected) return;
+  var key = songKey(state.selected.source, state.selected.track_id);
+  if (state.uploaded[key]) {
+    btn.className = 'btn-uploaded';
+    btn.innerHTML = SVG.check + '<span>已上传到歌单库</span>';
+    btn.disabled = true;
+    return;
+  }
+  if (state.unavailable[key]) {
+    btn.className = 'btn-too-big';
+    btn.innerHTML = SVG.upload + '<span>当前音源无音频</span>';
+    btn.disabled = true;
+    return;
+  }
+  if (isTooBig(state.sizeCache[key])) {
+    btn.className = 'btn-too-big';
+    btn.innerHTML = SVG.upload + '<span>文件过大（' + sizeLabel(state.sizeCache[key]) + '）</span>';
+    btn.disabled = true;
+    return;
+  }
+  btn.className = 'btn-primary';
+  btn.innerHTML = SVG.upload + '<span>上传到歌单库</span>';
+  btn.disabled = false;
+}
+
+function setListenTip(type, text) {
+  var tip = $('listenTip');
+  var txt = $('listenTipText');
+  if (!tip || !txt) return;
+  if (type === 'warn') {
+    tip.className = 'listen-tip warn';
+    tip.querySelector('svg').innerHTML = '<circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>';
+    txt.textContent = text;
+  } else {
+    tip.className = 'listen-tip';
+    tip.querySelector('svg').innerHTML = '<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" fill="currentColor" stroke="none"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>';
+    txt.textContent = text || '已在左下角播放器中开始试听';
+  }
+}
+
+async function selectSong(song) {
+  $('detailCard').classList.remove('mobile-hidden');
+  var br = qualityBr();
+  state.selected = {
+    source: song.source || 'netease', track_id: song.id, name: song.name,
+    artist: fmtArtist(song.artist), pic_id: song.pic_id || '',
+    lyric_id: song.lyric_id || song.id, br: br, quality: $('qualitySel').value,
+  };
+
+  $('detailEmpty').style.display = 'none'; $('detailContent').style.display = '';
+  $('detailName').textContent = song.name || '—';
+  $('detailArtist').innerHTML = SVG.mic + '<span>' + escapeHtml(fmtArtist(song.artist) || '—') + '</span>';
+  $('detailSrc').textContent = song.source || '—';
+  $('detailQ').textContent = $('qualitySel').value;
+  $('uploadStatus').textContent = '正在加载歌曲信息…';
+  $('lyricBox').innerHTML = '';
+  var cover = $('detailCover'); cover.style.display = 'none'; cover.removeAttribute('src');
+  $('detailCoverPh').style.display = '';
+  setListenTip('normal');
+
+  syncDetailUploadBtn();
+  if (window.innerWidth <= 900) $('detailCard').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+  try {
+    var track = await gdTrackAll(song.source || 'netease', song.id, song.pic_id, song.lyric_id || song.id, br);
+
+    var curKey = songKey(song.source, song.id);
+
+    if (track.pic_url) { cover.src = track.pic_url; cover.style.display = ''; $('detailCoverPh').style.display = 'none'; }
+    if (track.lyric) renderLyric(track.lyric);
+
+    if (track.unavailable || !track.url) {
+      state.unavailable[curKey] = true;
+
+      var curTr = document.querySelector('#searchBody tr.selected');
+      if (curTr && !state.uploaded[curKey]) {
+        var upb = curTr.querySelector('button[data-act="upload"]');
+        if (upb) {
+          upb.className = 'btn-too-big btn-xs';
+          upb.innerHTML = SVG.upload + '<span>无音频</span>';
+          upb.disabled = true;
+          upb.removeAttribute('data-act');
+        }
+      }
+
+      var tipMsg = '当前音源（' + sourceLabel(song.source) + '）未返回播放地址，可能是该音源不支持此音质「' + $('qualitySel').value + '」或曲目受限。请换音源或降低音质。';
+      $('uploadStatus').textContent = tipMsg;
+      setListenTip('warn', '当前音源无可用音频，无法试听');
+      toast('无可用音频：' + sourceLabel(song.source) + ' 未返回播放地址', 'error');
+      syncDetailUploadBtn();
+      return;
+    }
+
+    if (track.size) {
+      state.sizeCache[curKey] = track.size;
+
+      var curTr2 = document.querySelector('#searchBody tr.selected');
+      if (curTr2 && isTooBig(track.size) && !state.uploaded[curKey]) {
+        var upb2 = curTr2.querySelector('button[data-act="upload"]');
+        if (upb2) {
+          upb2.className = 'btn-too-big btn-xs';
+          upb2.innerHTML = SVG.upload + '<span>过大</span>';
+          upb2.disabled = true;
+          upb2.removeAttribute('data-act');
+        }
+      }
+    }
+    syncDetailUploadBtn();
+    setListenTip('normal');
+
+    if (window.MusicPlayer) {
+      window.MusicPlayer.loadTrack({
+        id: curKey,
+        name: song.name, artist: fmtArtist(song.artist),
+        url: track.url, pic: track.pic_url || '',
+      });
+    }
+    $('uploadStatus').textContent = '';
+  } catch (e) {
+    console.error('[select] 原始错误:', e);
+    $('uploadStatus').textContent = friendlyError(e);
+    setListenTip('warn', '加载失败：' + friendlyError(e));
+  }
+}
+
+function renderLyric(lrc) {
+  var lines = []; var pattern = /\[(\d+):(\d+\.?\d*)\](.*)/;
+  lrc.split(/\r?\n/).forEach(function(line) {
+    var m = line.trim().match(pattern);
+    if (m) { var t = parseInt(m[1]) * 60 + parseFloat(m[2]); lines.push({ t: t, text: m[3].trim() }); }
+  });
+  lines.sort(function(a, b) { return a.t - b.t; });
+  if (!lines.length) { $('lyricBox').innerHTML = ''; return; }
+  var html = '<div class="lrc-wrap">';
+  lines.forEach(function(l) { if (l.text) html += '<div class="lrc-line">' + escapeHtml(l.text) + '</div>'; });
+  html += '</div>'; $('lyricBox').innerHTML = html;
+}
+
+$('uploadBtn').addEventListener('click', async function(ev) {
+  ev.stopPropagation();
+  if (!state.selected) { toast('请先选择歌曲', 'error'); return; }
+  var key = songKey(state.selected.source, state.selected.track_id);
+  if (state.uploaded[key]) { toast('该歌曲已上传', 'success'); return; }
+  if (state.unavailable[key]) { toast('该音源未返回音频，请换音源或降低音质', 'error'); return; }
+
+  var sel = state.selected;
+
+  if (isTooBig(state.sizeCache[key])) {
+    syncDetailUploadBtn();
+    toast('文件 ' + sizeLabel(state.sizeCache[key]) + '，超过 ' + MAX_UPLOAD_SIZE_MB + ' MB 上限', 'error');
+    return;
+  }
+
+  var btn = $('uploadBtn'); btn.disabled = true; btn.innerHTML = SVG.upload + '<span>获取中…</span>';
+  $('uploadStatus').textContent = '正在获取音频直链…';
+  try {
+    var track = await gdTrackAll(sel.source, sel.track_id, sel.pic_id, sel.lyric_id, sel.br);
+
+    if (track.unavailable || !track.url) {
+      state.unavailable[key] = true;
+      syncDetailUploadBtn();
+      throw new Error('当前音源（' + sourceLabel(sel.source) + '）未返回音频，可能是该音源不支持此音质「' + $('qualitySel').value + '」或曲目受限。换音源或降低音质试试');
+    }
+
+    if (track.size) state.sizeCache[key] = track.size;
+    if (isTooBig(track.size)) {
+      syncDetailUploadBtn();
+      throw new Error('文件 ' + sizeLabel(track.size) + '，超过 ' + MAX_UPLOAD_SIZE_MB + ' MB 上限（请换音源或降低音质）');
+    }
+
+    btn.innerHTML = SVG.upload + '<span>推送中…</span>';
+    $('uploadStatus').textContent = '正在下载并推送到 GitHub，请稍候…';
+
+    var data = await api('/upload', 'POST', {
+      source: sel.source, track_id: sel.track_id, name: sel.name, artist: sel.artist,
+      audio_url: track.url, pic_url: track.pic_url || '', lyric: track.lyric || '', br: sel.br,
+    });
+    state.uploaded[key] = true;
+    markDirty(1);
+    syncDetailUploadBtn();
+    $('uploadStatus').textContent = data.message || '上传成功';
+    toast((data.message || '上传成功') + '（记得点右上角「保存并部署」生效）', 'success');
+
+    var tr = document.querySelector('#searchBody tr.selected');
+    if (tr) {
+      var upBtn = tr.querySelector('button[data-act="upload"]');
+      if (upBtn) { upBtn.className = 'btn-uploaded btn-xs'; upBtn.innerHTML = SVG.check + '<span>已上传</span>'; upBtn.disabled = true; upBtn.removeAttribute('data-act'); }
+    }
+    loadLibrary();
+  } catch (e) {
+    console.error('[upload-detail] 原始错误:', e);
+    var friendly = friendlyError(e);
+    $('uploadStatus').textContent = friendly;
+    toast(friendly, 'error');
+    btn.disabled = false; btn.className = 'btn-primary'; btn.innerHTML = SVG.upload + '<span>上传到歌单库</span>';
+    syncDetailUploadBtn();
+  }
+});
+
+$('saveDeployBtn').addEventListener('click', async function() {
+  var btn = $('saveDeployBtn');
+  if (btn.disabled) return;
+
+  var count = state.changeCount || 1;
+
+  var ok = await showConfirm(
+    '<span style="display:block;line-height:1.8">' +
+      '本次共 <b style="color:var(--text)">' + count + '</b> 项变更（上传 / 删除）待部署。<br>' +
+      '确认后将重新构建并发布音乐库。<br>' +
+      '<span style="color:var(--text-muted);font-size:12.5px;display:inline-block;margin-top:10px">' +
+        '💡 你还可以先「返回继续添加」更多歌曲，稍后一起部署，避免频繁触发 Pages 构建。' +
+      '</span>' +
+    '</span>',
+    {
+      title:      '确认保存并部署？',
+      okText:     '确认保存并部署',
+      cancelText: '返回继续添加'
+    }
+  );
+  if (!ok) return;
+
+  var prog = openProgressModal();
+  prog.update(progItem('running', '正在触发 Pages 部署…'));
+
+  try {
+    var data = await api('/deploy', 'POST');
+    prog.finish({
+      title:   '保存并部署成功',
+      message: progItem('done', 'Pages 部署已触发')
+        + '<div class="progress-tip">新资源需要等 Pages 构建完成后才能访问，通常需要 <b>1-3 分钟</b>。<br>可在 Cloudflare Dashboard 的 Deployments 页查看构建进度。<br>本次共部署 ' + count + ' 项变更。</div>',
+      type: 'success',
+      buttonText: '完成'
+    });
+    clearDirty();
+    toast('部署已触发', 'success');
+  } catch (e) {
+    console.error('[deploy] 原始错误:', e);
+    prog.finish({
+      title:   '部署失败',
+      message: progItem('err', '部署失败：' + escapeHtml(e.message || String(e)))
+        + '<div class="progress-tip">变更已提交到 Git，稍后可重试点击「保存并部署」。</div>',
+      type: 'error',
+      buttonText: '关闭'
+    });
+    toast(friendlyError(e), 'error');
+  }
+});
+
+$('refreshLibBtn').addEventListener('click', loadLibrary);
+
+async function loadLibrary() {
+  $('libBody').innerHTML = '<tr><td colspan="6" class="empty">加载中…</td></tr>';
+  try {
+    var data = await api('/library', 'GET');
+    state.library = data.list || [];
+    renderLibrary();
+    if (window.MusicPlayer && typeof window.MusicPlayer.setLibrary === 'function') window.MusicPlayer.setLibrary(state.library);
+    state.library.forEach(function(s) { state.uploaded[songKey(s.source, s.id)] = true; });
+    if (state.results.length) renderSearch();
+    if (state.selected) syncDetailUploadBtn();
+  } catch (e) {
+    console.error('[library] 原始错误:', e);
+    $('libBody').innerHTML = '<tr><td colspan="6" class="empty">' + friendlyError(e) + '</td></tr>';
+    $('libStatus').textContent = '';
+  }
+}
+
+function renderLibrary() {
+  var tb = $('libBody');
+  $('libStatus').textContent = '共 ' + state.library.length + ' 首';
+  if (!state.library.length) { tb.innerHTML = '<tr><td colspan="6" class="empty">歌单为空，去搜索页面添加吧</td></tr>'; return; }
+
+  var html = '';
+  var total = state.library.length;
+
+  // 反序遍历：新上传的歌 append 到末尾，反序后显示在最上面
+  for (var i = total - 1; i >= 0; i--) {
+    var s = state.library[i];
+    var artist = fmtArtist(s.artist);
+    var displayNo = total - i;
+    html += '<tr data-idx="' + i + '">' +
+      '<td>' + displayNo + '</td>' +
+      '<td class="song-cell">' +
+        '<div class="song-title">' + escapeHtml(s.name) + '</div>' +
+        '<div class="song-artist-m">' + escapeHtml(artist) + '</div>' +
+      '</td>' +
+      '<td>' + escapeHtml(artist) + '</td>' +
+      '<td><span class="badge badge-src">' + escapeHtml(s.source || '') + '</span></td>' +
+      '<td class="mono">' + escapeHtml(s.id) + '</td>' +
+      '<td><button class="btn-danger btn-xs" data-act="del" data-idx="' + i + '">' + SVG.trash + '<span>删除</span></button></td>' +
+    '</tr>';
+  }
+  tb.innerHTML = html;
+}
+
+$('libBody').addEventListener('click', async function(ev) {
+  ev.stopPropagation();
+
+  // ─── 点删除按钮：走删除逻辑 ───
+  var delBtn = ev.target.closest('button[data-act="del"]');
+  if (delBtn) {
+    var idx = parseInt(delBtn.dataset.idx);
+    var song = state.library[idx];
+    if (!song) return;
+
+    var ok = await showConfirm(
+      '《' + escapeHtml(song.name) + ' - ' + escapeHtml(fmtArtist(song.artist)) + '》\n将同时删除 GitHub 上的音频、封面和歌词文件，此操作不可撤销。',
+      { title: '确认删除这首歌？', okText: '确认删除', cancelText: '取消', danger: true }
+    );
+    if (!ok) return;
+
+    delBtn.disabled = true; delBtn.innerHTML = SVG.trash + '<span>删除中…</span>';
+    try {
+      var data = await api('/delete', 'POST', { track_id: song.id, source: song.source });
+      toast(data.message || '删除成功', 'success');
+      delete state.uploaded[songKey(song.source, song.id)];
+      markDirty(1);
+      if (data.errors && data.errors.length) { console.warn('部分文件删除失败:', data.errors); toast('索引已删除，但部分文件删除失败', 'error'); }
+      loadLibrary();
+    } catch (e) {
+      console.error('[delete] 原始错误:', e);
+      toast(friendlyError(e), 'error');
+      delBtn.disabled = false; delBtn.innerHTML = SVG.trash + '<span>删除</span>';
+    }
+    return;
+  }
+
+  // ─── 点行其它位置：播放 ───
+  var tr = ev.target.closest('tr[data-idx]');
+  if (!tr) return;
+  var playIdx = parseInt(tr.dataset.idx);
+  var s = state.library[playIdx];
+  if (!s) return;
+
+  if (!s.url) {
+    toast('这首歌暂无可用播放链接', 'error');
+    return;
+  }
+
+  document.querySelectorAll('#libBody tr').forEach(function(t) { t.classList.remove('selected'); });
+  tr.classList.add('selected');
+
+  // 探测资源是真的音频还是 Pages 的 HTML fallback
+  var probeOk = true;
+  try {
+    var headResp = await fetch(s.url, { method: 'HEAD', cache: 'no-store' });
+    var ct = (headResp.headers.get('Content-Type') || '').toLowerCase();
+    if (!headResp.ok) {
+      probeOk = false;
+      toast('《' + s.name + '》资源不可用（HTTP ' + headResp.status + '）', 'error');
+    } else if (ct.indexOf('text/html') >= 0) {
+      probeOk = false;
+      toast('《' + s.name + '》资源尚未部署，点「保存并部署」后 1-3 分钟生效', 'error');
+    }
+  } catch (e) {
+    probeOk = false;
+    toast('无法访问《' + s.name + '》资源：' + (e.message || String(e)), 'error');
+  }
+  if (!probeOk) return;
+
+  if (window.MusicPlayer) {
+    window.MusicPlayer.loadTrack({
+      id: songKey(s.source, s.id),
+      name: s.name,
+      artist: fmtArtist(s.artist),
+      url: s.url,
+      pic: s.pic || ''
+    });
+  }
+});
+
+(async function init() {
+  if (isMobile()) $('detailCard').classList.add('mobile-hidden');
+  updateRateUI();
+  setInterval(updateRateUI, 1000);
+  loadDirtyState();
+  var pwd = getToken();
+  if (!pwd) { showLogin(); return; }
+  try {
+    var r = await fetch('/api/library', { headers: { 'X-Auth-Token': pwd } });
+    if (r.status === 401) { clearToken(); showLogin(); return; }
+    hideLogin();
+    await loadLibrary();
+
+    // ★ 加载歌单后，从 CDN 探测真实部署状态（不依赖 localStorage）
+    await syncDirtyFromServer();
+  } catch (e) { showLogin(); }
+})();
+</script>
+
+<script>
+// ═══════════════════════════════════════════════════════════
+// 浮动播放器
+// ═══════════════════════════════════════════════════════════
+(function () {
+  'use strict';
+
+  var DEFAULT_COVER = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">' +
+      '<defs>' +
+        '<linearGradient id="g" x1="0" y1="0" x2="1" y2="1">' +
+          '<stop offset="0" stop-color="#0f766e"/>' +
+          '<stop offset="1" stop-color="#0891b2"/>' +
+        '</linearGradient>' +
+      '</defs>' +
+      '<rect width="100" height="100" fill="url(#g)"/>' +
+      '<path fill="rgba(255,255,255,0.92)" d="M74.7 55.8c-1.6-6.1-7.1-10.6-13.7-10.6-1.1 0-2.2.1-3.2.4-2.3-5.7-7.9-9.7-14.4-9.7-8.6 0-15.6 7-15.6 15.6v.6c-3.9.8-6.8 4.2-6.8 8.3 0 4.6 3.7 8.3 8.3 8.3h39c5.4 0 9.7-4.3 9.7-9.7 0-1.1-.2-2.1-.5-3.1-.9-.2-1.9-.2-2.8-.1z"/>' +
+      '<circle cx="50" cy="50" r="34" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>' +
+    '</svg>'
+  );
+
+  var CFG = {
+    ballCoverSize: 28, ballDimDelay: 2800, title: 'CF Music 播放器',
+    // 播放器默认音量 0.5
+    defaultVolume: 0.5, rotationSpeed: 5,
+    waveStroke: '2.8px', waveMobileStroke: '1.8px',
+    waveSpeed: 2.0, waveScale: 1.8, autoCollapseDelay: 2800,
+  };
+  var BDD = CFG.ballDimDelay;
+  var ICON = {
+    prev : '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>',
+    play : '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>',
+    pause: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>',
+    next : '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>',
+    order: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>',
+    shuffle: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg>',
+    list : '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/></svg>',
+    vol  : '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>',
+    mute : '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>',
+    close: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>',
+  };
+  var player = document.createElement('div'); player.className = 'music-player collapsed';
+  var panel = document.createElement('div'); panel.className = 'mp-panel';
+  var shimmer = document.createElement('div'); shimmer.className = 'mp-shimmer'; panel.appendChild(shimmer);
+  var disc = document.createElement('div'); disc.className = 'mp-disc';
+  var discRotating = document.createElement('div'); discRotating.className = 'mp-disc-rotating';
+  var discBase = document.createElement('div'); discBase.className = 'mp-disc-base';
+  var discImg = Object.assign(document.createElement('img'), { className: 'mp-disc-img' });
+  discImg.style.display = 'none';
+  discRotating.append(discBase, discImg); disc.append(discRotating);
+  var infoWrap = document.createElement('div'); infoWrap.className = 'mp-info';
+  var trackInfo = document.createElement('div'); trackInfo.className = 'mp-track';
+  trackInfo.innerHTML = '<div class="mp-title">未播放</div><div class="mp-artist">' + CFG.title + '</div>';
+  var progressWrap = document.createElement('div'); progressWrap.className = 'mp-progress';
+  var bar = document.createElement('div'); bar.className = 'mp-bar'; bar.innerHTML = '<div class="mp-fill"></div>';
+  var timeRow = document.createElement('div'); timeRow.className = 'mp-time';
+  timeRow.innerHTML = '<span class="mp-cur">0:00</span><span class="mp-dur">0:00</span>';
+  progressWrap.append(bar, timeRow);
+  var controls = document.createElement('div'); controls.className = 'mp-controls';
+  function mkBtn(svg, cls) { var b = document.createElement('button'); b.className = ('mp-btn ' + (cls || '')).trim(); b.innerHTML = svg; return b; }
+  var prevBtn = mkBtn(ICON.prev), playBtn = mkBtn(ICON.play, 'play'), nextBtn = mkBtn(ICON.next),
+      modeBtn = mkBtn(ICON.shuffle, 'active'),
+      listBtn = mkBtn(ICON.list), volBtn = mkBtn(ICON.vol);
+  var volSlider = document.createElement('div'); volSlider.className = 'mp-vol-slider';
+  volSlider.innerHTML = '<input type="range" min="0" max="100">';
+  var volInput = volSlider.querySelector('input');
+  var volWrap = document.createElement('div'); volWrap.className = 'mp-vol-wrap';
+  volWrap.append(volBtn, volSlider);
+  controls.append(prevBtn, playBtn, nextBtn, modeBtn, listBtn, volWrap);
+  infoWrap.append(trackInfo, progressWrap, controls);
+  panel.append(disc, infoWrap);
+  var ball = document.createElement('div'); ball.className = 'mp-ball';
+  var ballWaves = document.createElement('div'); ballWaves.className = 'mp-ball-waves';
+  for (var i = 0; i < 3; i++) {
+    var w = document.createElement('div'); w.className = 'mp-ball-wave';
+    w.style.animationDelay = (i * CFG.waveSpeed / 3) + 's';
+    ballWaves.appendChild(w);
+  }
+  var ballInner = document.createElement('div'); ballInner.className = 'mp-ball-inner';
+  var ballBase = document.createElement('div'); ballBase.className = 'mp-ball-base';
+  var ballImg = Object.assign(document.createElement('img'), { className: 'mp-ball-img' });
+  ballImg.style.display = 'none';
+  ballInner.append(ballBase, ballImg);
+  var ballOverlay = document.createElement('div'); ballOverlay.className = 'mp-ball-overlay';
+  ballOverlay.innerHTML = ICON.play;
+  ball.append(ballWaves, ballInner, ballOverlay);
+  player.append(panel, ball); document.body.appendChild(player);
+  var plPanel = document.createElement('div'); plPanel.className = 'mp-playlist';
+  plPanel.innerHTML = '<div class="mp-pl-header"><span>播放列表</span><i class="mp-pl-close">' + ICON.close + '</i></div><div class="mp-pl-inner"><div class="mp-pl-content"></div></div>';
+  document.body.appendChild(plPanel);
+  var plContent = plPanel.querySelector('.mp-pl-content'), plCloseBtn = plPanel.querySelector('.mp-pl-close');
+  var audio = new Audio(); audio.volume = CFG.defaultVolume; volInput.value = audio.volume * 100;
+  var playing = false, expanded = false, plVisible = false, playlist = [], curIdx = 0, rotAngle = 0, rafId = null,
+      lastVol = CFG.defaultVolume, ballDimTimer = null, autoCollapseTimer = null, panelHideTimer = null;
+
+  var playMode = 'shuffle';
+  try {
+    var stored = localStorage.getItem('cf-music-playmode');
+    if (stored === 'order' || stored === 'shuffle') playMode = stored;
+  } catch (_) {}
+
+  function updateModeBtn() {
+    modeBtn.innerHTML = (playMode === 'shuffle') ? ICON.shuffle : ICON.order;
+    modeBtn.classList.add('active');
+    modeBtn.title = (playMode === 'shuffle') ? '随机播放（点击切换顺序）' : '顺序播放（点击切换随机）';
+  }
+  updateModeBtn();
+
+  function fmt(s) { if (isNaN(s)) return '0:00'; var m = Math.floor(s / 60), sec = Math.floor(s % 60); return m + ':' + (sec < 10 ? '0' : '') + sec; }
+  function stopProp(e) { e.stopPropagation(); }
+  function songKey(source, id) { return (source || '') + ':' + (id || ''); }
+  function scheduleBallDim() { clearTimeout(ballDimTimer); ballDimTimer = setTimeout(function() { if (!expanded) ball.classList.add('dim'); }, BDD); }
+  function cancelBallDim() { clearTimeout(ballDimTimer); ball.classList.remove('dim'); }
+  function scheduleAutoCollapse() { clearTimeout(autoCollapseTimer); autoCollapseTimer = setTimeout(function() { if (expanded && !plVisible) collapse(); }, CFG.autoCollapseDelay); }
+  function cancelAutoCollapse() { clearTimeout(autoCollapseTimer); }
+  function applyTheme() {
+    var dark = document.documentElement.classList.contains('dark')
+      || document.documentElement.getAttribute('data-theme') === 'dark'
+      || window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var vars = {
+      '--slider-bg': dark ? 'rgba(255,255,255,0.15)' : 'rgba(0,0,0,0.08)',
+      '--slider-fill': dark ? '#2dd4bf' : '#0f766e',
+      '--slider-thumb': dark ? '#2dd4bf' : '#0f766e',
+      '--wave-color': dark ? 'rgba(45,212,191,0.55)' : 'rgba(15,118,110,0.45)',
+      '--progress-bg': dark ? 'rgba(255,255,255,0.15)' : 'rgba(0,0,0,0.08)',
+      '--progress-fill': dark ? '#2dd4bf' : '#0f766e',
+    };
+    Object.keys(vars).forEach(function(k) { player.style.setProperty(k, vars[k]); });
+  }
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyTheme);
+  new MutationObserver(applyTheme).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme', 'class'] });
+  function repositionPlaylist() {
+    if (!plVisible) return;
+    var r = listBtn.getBoundingClientRect(), PW = 280;
+    var left = Math.max(10, Math.min(r.left + r.width / 2 - PW / 2, window.innerWidth - PW - 10));
+    var bottom = Math.max(10, window.innerHeight - r.top + 8);
+    plPanel.style.left = left + 'px'; plPanel.style.bottom = bottom + 'px'; plPanel.style.top = 'auto';
+  }
+  window.addEventListener('resize', repositionPlaylist);
+  window.addEventListener('scroll', repositionPlaylist, true);
+  function renderList() {
+    if (!playlist.length) { plContent.innerHTML = '<div style="padding:20px;text-align:center;opacity:.6;">播放列表为空</div>'; return; }
+    plContent.innerHTML = playlist.map(function(t, i) {
+      return '<div class="mp-pl-item' + (i === curIdx ? ' active' : '') + '" data-i="' + i + '">' + (i + 1) + '. ' + t.name + ' - ' + t.artist + '</div>';
+    }).join('');
+    plContent.querySelectorAll('.mp-pl-item').forEach(function(el) {
+      el.onclick = function(e) { stopProp(e); loadTrack(parseInt(el.dataset.i)); if (playing) audioPlay(); togglePlaylist(); };
+    });
+  }
+  function loadTrack(idx) {
+    if (!playlist.length) return;
+    curIdx = idx; var t = playlist[idx];
+    setInfo({ title: t.name + ' (加载中…)', artist: t.artist });
+    plContent.querySelectorAll('.mp-pl-item').forEach(function(el, i) { el.classList.toggle('active', i === idx); });
+    if (!t.url) { nextTrack(); return; }
+    audio.src = t.url;
+    setInfo({ title: t.name, artist: t.artist, cover: t.pic || '' });
+  }
+  function setInfo(o) {
+    if (o.title) trackInfo.querySelector('.mp-title').textContent = o.title;
+    if (o.artist) trackInfo.querySelector('.mp-artist').textContent = o.artist;
+
+    if (o.cover === undefined) return;
+
+    var cover = o.cover || '';
+    if (cover) {
+      discImg.onerror = function() { discImg.onerror = null; discImg.src = DEFAULT_COVER; };
+      ballImg.onerror = function() { ballImg.onerror = null; ballImg.src = DEFAULT_COVER; };
+      discImg.src = cover;
+      ballImg.src = cover;
+    } else {
+      discImg.onerror = null;
+      ballImg.onerror = null;
+      discImg.src = DEFAULT_COVER;
+      ballImg.src = DEFAULT_COVER;
+    }
+    discImg.style.display = 'block';
+    ballImg.style.display = 'block';
+  }
+  function audioPlay() { audio.play().catch(function() { setPlaying(false); }); setPlaying(true); }
+  function audioPause() { audio.pause(); setPlaying(false); }
+
+  function pickShuffleIdx(exclude) {
+    if (playlist.length <= 1) return 0;
+    var n;
+    do { n = Math.floor(Math.random() * playlist.length); } while (n === exclude);
+    return n;
+  }
+  function prevTrack() {
+    if (!playlist.length) return;
+    if (playMode === 'shuffle') curIdx = pickShuffleIdx(curIdx);
+    else curIdx = (curIdx - 1 + playlist.length) % playlist.length;
+    loadTrack(curIdx); if (playing) audioPlay();
+  }
+  function nextTrack() {
+    if (!playlist.length) return;
+    if (playMode === 'shuffle') curIdx = pickShuffleIdx(curIdx);
+    else curIdx = (curIdx + 1) % playlist.length;
+    loadTrack(curIdx); if (playing) audioPlay();
+  }
+
+  function setPlaying(s) {
+    playing = s; var icon = s ? ICON.pause : ICON.play;
+    playBtn.innerHTML = icon; ballOverlay.innerHTML = icon;
+    player.classList.toggle('playing', s);
+    if (s && !rafId) startRotation();
+    if (!s && rafId) { cancelAnimationFrame(rafId); rafId = null; }
+  }
+  function startRotation() {
+    var step = 360 / (CFG.rotationSpeed * 60);
+    function tick() { if (!playing) { rafId = null; return; } rotAngle += step; discRotating.style.transform = 'rotate(' + rotAngle + 'deg)'; ballInner.style.transform = 'rotate(' + rotAngle + 'deg)'; rafId = requestAnimationFrame(tick); }
+    rafId = requestAnimationFrame(tick);
+  }
+  audio.ontimeupdate = function() {
+    var c = audio.currentTime, d = audio.duration; if (!d || isNaN(d)) return;
+    player.querySelector('.mp-fill').style.width = (c / d * 100) + '%';
+    timeRow.querySelector('.mp-cur').textContent = fmt(c);
+    timeRow.querySelector('.mp-dur').textContent = fmt(d);
+  };
+  audio.onloadedmetadata = audio.ontimeupdate;
+  audio.onended = nextTrack;
+  audio.onerror = function() { setPlaying(false); };
+  function expand(bindOutside) {
+    clearTimeout(panelHideTimer);
+    if (panel.style.display === 'none') { panel.style.display = ''; void panel.offsetWidth; }
+    expanded = true; player.classList.remove('collapsed'); cancelBallDim();
+    document.removeEventListener('click', onOutsideClick);
+    if (bindOutside) setTimeout(function() { document.addEventListener('click', onOutsideClick); }, 0);
+  }
+  function onVolOutside(e) {
+    if (!volWrap.contains(e.target)) {
+      volSlider.classList.remove('show');
+      document.removeEventListener('click', onVolOutside);
+    }
+  }
+  function collapse() {
+    clearTimeout(autoCollapseTimer);
+    if (plVisible) { plVisible = false; plPanel.classList.remove('show'); document.removeEventListener('click', onPlOutside); }
+    volSlider.classList.remove('show'); document.removeEventListener('click', onVolOutside);
+    expanded = false; player.classList.add('collapsed');
+    document.removeEventListener('click', onOutsideClick);
+    applyTheme(); scheduleBallDim();
+    clearTimeout(panelHideTimer);
+    panelHideTimer = setTimeout(function() { if (player.classList.contains('collapsed')) panel.style.display = 'none'; }, 1000);
+  }
+  function onOutsideClick(e) {
+    if (e.target.closest && (e.target.closest('#panel-results') || e.target.closest('#panel-library') || e.target.closest('.search-panel') || e.target.closest('.detail-panel') || e.target.closest('#loginOverlay') || e.target.closest('#modalOverlay'))) return;
+    if (player.contains(e.target) || plPanel.contains(e.target)) return;
+    collapse();
+  }
+  function togglePlaylist() {
+    plVisible = !plVisible; plPanel.classList.toggle('show', plVisible);
+    if (plVisible) { cancelAutoCollapse(); repositionPlaylist(); setTimeout(function() { document.addEventListener('click', onPlOutside); }, 0); }
+    else { document.removeEventListener('click', onPlOutside); if (expanded) scheduleAutoCollapse(); }
+  }
+  function onPlOutside(e) { if (!plPanel.contains(e.target) && !listBtn.contains(e.target)) togglePlaylist(); }
+  function syncVolumeUI() { player.style.setProperty('--slider-pct', volInput.value + '%'); volBtn.innerHTML = audio.volume === 0 ? ICON.mute : ICON.vol; }
+  disc.onclick = function(e) { stopProp(e); playing ? audioPause() : audioPlay(); };
+  ball.onclick = function(e) {
+    stopProp(e); if (expanded) return;
+    var rect = ball.getBoundingClientRect(), cx = rect.left + rect.width / 2, cy = rect.top + rect.height / 2;
+    var dx = e.clientX - cx, dy = e.clientY - cy, dist = Math.sqrt(dx * dx + dy * dy);
+    if (dist <= CFG.ballCoverSize / 2) { playing ? audioPause() : audioPlay(); }
+    else { expand(true); scheduleAutoCollapse(); }
+  };
+  playBtn.onclick = function(e) { stopProp(e); playing ? audioPause() : audioPlay(); };
+  prevBtn.onclick = function(e) { stopProp(e); prevTrack(); };
+  nextBtn.onclick = function(e) { stopProp(e); nextTrack(); };
+  modeBtn.onclick = function(e) {
+    stopProp(e);
+    playMode = (playMode === 'shuffle') ? 'order' : 'shuffle';
+    try { localStorage.setItem('cf-music-playmode', playMode); } catch (_) {}
+    updateModeBtn();
+    if (typeof toast === 'function') toast(playMode === 'shuffle' ? '随机播放' : '顺序播放');
+  };
+  listBtn.onclick = function(e) { stopProp(e); togglePlaylist(); };
+  plCloseBtn.onclick = function(e) { stopProp(e); togglePlaylist(); };
+
+  volSlider.addEventListener('mousedown', stopProp);
+  volSlider.addEventListener('touchstart', stopProp);
+  volBtn.onclick = function(e) {
+    stopProp(e);
+    var open = volSlider.classList.toggle('show');
+    if (open) setTimeout(function() { document.addEventListener('click', onVolOutside); }, 0);
+    else document.removeEventListener('click', onVolOutside);
+  };
+  volInput.oninput = function(e) { stopProp(e); audio.volume = e.target.value / 100; if (audio.volume > 0) lastVol = audio.volume; syncVolumeUI(); };
+  bar.onclick = function(e) {
+    stopProp(e); if (!audio.duration || isNaN(audio.duration)) return;
+    var r = bar.getBoundingClientRect();
+    audio.currentTime = ((e.clientX - r.left) / r.width) * audio.duration;
+  };
+  player.addEventListener('mouseenter', cancelAutoCollapse);
+  player.addEventListener('mousedown', cancelAutoCollapse);
+  player.addEventListener('mouseleave', function() { if (expanded && !plVisible) scheduleAutoCollapse(); });
+  var mob = window.innerWidth <= 768;
+  player.style.setProperty('--wave-stroke', mob ? CFG.waveMobileStroke : CFG.waveStroke);
+  player.style.setProperty('--wave-speed', CFG.waveSpeed + 's');
+  player.style.setProperty('--wave-scale', String(CFG.waveScale));
+  player.style.setProperty('--slider-pct', (audio.volume * 100) + '%');
+  applyTheme(); syncVolumeUI(); renderList();
+
+  function setLibrary(lib) {
+    if (!Array.isArray(lib)) return;
+    var libUrls = {}, newTracks = [];
+    lib.forEach(function(s) {
+      if (!s.url) return;
+      libUrls[s.url] = true;
+      newTracks.push({ id: songKey(s.source, s.id), name: s.name || '未知歌曲', artist: s.artist || '', url: s.url, pic: s.pic || '' });
+    });
+    playlist.forEach(function(t) { if (!libUrls[t.url]) { newTracks.push(t); libUrls[t.url] = true; } });
+    playlist = newTracks;
+
+    if (!playlist.length) { curIdx = 0; renderList(); return; }
+
+    var curUrl = audio.getAttribute('src') || '';
+    if (!curUrl) {
+      var randIdx = Math.floor(Math.random() * playlist.length);
+      curIdx = randIdx;
+      loadTrack(randIdx);
+    } else {
+      var found = -1;
+      for (var i = 0; i < playlist.length; i++) if (playlist[i].url === curUrl) { found = i; break; }
+      if (found >= 0) curIdx = found;
+      else if (curIdx >= playlist.length) curIdx = 0;
+    }
+    renderList();
+  }
+  function playExternal(track) {
+    if (!track || !track.url) return;
+    var idx = -1;
+    for (var i = 0; i < playlist.length; i++) if (playlist[i].url === track.url) { idx = i; break; }
+    if (idx >= 0) curIdx = idx;
+    else { playlist.push({ id: track.id || ('ext_' + Date.now()), name: track.name || '未知歌曲', artist: track.artist || CFG.title, url: track.url, pic: track.pic || '' }); curIdx = playlist.length - 1; }
+    renderList(); loadTrack(curIdx); audioPlay();
+    if (!expanded) expand(true);
+    scheduleAutoCollapse(); scheduleBallDim();
+  }
+  window.MusicPlayer = {
+    loadTrack: playExternal,
+    play: playExternal,
+    setLibrary: setLibrary,
+    expand: function() { expand(false); scheduleAutoCollapse(); },
+    collapse: function() { collapse(); }
+  };
+})();
+</script>
+</body>
+</html>

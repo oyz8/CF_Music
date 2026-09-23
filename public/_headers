@@ -1,0 +1,11 @@
+# 音乐文件 - 缓存 30 天
+/url/*
+  Cache-Control: public, max-age=2592000, immutable
+
+# 封面图片 - 缓存 30 天
+/pic/*
+  Cache-Control: public, max-age=2592000, immutable
+
+# 歌词文件 - 缓存 30 天
+/lrc/*
+  Cache-Control: public, max-age=2592000, immutable

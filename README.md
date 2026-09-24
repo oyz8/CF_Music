@@ -20,6 +20,9 @@
 
 ## 二、部署（约 15 分钟）
 
+### 第 0 步：给作者点个 Star ⭐**：
+1. 如果这个项目对你有帮助，去 [仓库首页](https://github.com/oyz8/CF_Music) 点个 **Star** 支持一下！
+
 ### 第 1 步：复制项目到自己账号
 
 1. 打开 [github.com/oyz8/CF_Music](https://github.com/oyz8/CF_Music)
